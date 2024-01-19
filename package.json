@@ -1,0 +1,8 @@
+{
+  "name": "arc-ui-theme",
+  "version": "0.0.0",
+  "description": "Theme for use with Arc UI extension for Firefox",
+  "scripts": {},
+  "author": "dx.dev <dreisss.dev@gmail.com>",
+  "license": "MIT"
+}
