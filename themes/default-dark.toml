@@ -1,0 +1,20 @@
+[app]
+background = "#1a1a1a"
+border = "#4c4c4e"
+
+[search_prompt]
+background = "#1a1a1a"
+border = "#545454"
+division = "#313131"
+
+[search_prompt.input]
+text = "#eaeaea"
+
+[search_prompt.result_item]
+text = "#eaeaea"
+text_url = "#545454"
+
+[search_prompt.result_item.selected]
+background = "#f2f2f2"
+text = "#ffffff"
+text_url = "#828282"
