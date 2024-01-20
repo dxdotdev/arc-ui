@@ -6,12 +6,12 @@ const theme_name =
 	(theme_index > 1 && Bun.argv[theme_index + 1]) || 'default-dark'
 
 const is_path = theme_name.endsWith('.toml')
-const theme_path = is_path ? theme_name : `../themes/${theme_name}.toml`
+const theme_path = is_path ? theme_name : `themes/${theme_name}.toml`
 
 let theme
 
 try {
-	theme = require(theme_path)
+	theme = require(`../${theme_path}`)
 } catch {
 	throw `Error finding or parsing file "${theme_path}"!`
 }
