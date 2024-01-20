@@ -1,0 +1,15 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.5.2/schema.json",
+	"files": {
+		"ignoreUnknown": true
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single"
+		}
+	}
+}

@@ -1,19 +1,20 @@
 {
-  "name": "arc-ui-theme",
-  "version": "0.0.0",
-  "description": "Theme to use with Arc UI extension for Firefox",
-  "author": "dx.dev <dreisss.dev@gmail.com>",
-  "license": "MIT",
-  "type": "module",
-  "module": "scripts/build.ts",
-  "scripts": {
-    "build": "bun run scripts/build.ts"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "sass": "^1.70.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+	"name": "arc-ui-theme",
+	"version": "0.0.0",
+	"description": "Theme to use with Arc UI extension for Firefox",
+	"author": "dx.dev <dreisss.dev@gmail.com>",
+	"license": "MIT",
+	"type": "module",
+	"module": "scripts/build.ts",
+	"scripts": {
+		"build": "bun run scripts/build.ts"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.5.2",
+		"@types/bun": "latest",
+		"sass": "^1.70.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
 }
