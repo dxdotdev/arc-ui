@@ -6,9 +6,12 @@
   "license": "MIT",
   "type": "module",
   "module": "scripts/build.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "bun run scripts/build.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "sass": "^1.70.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
