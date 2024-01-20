@@ -1,19 +1,18 @@
 import { compile } from 'sass'
 
 // theme parsing
-const theme_index = Bun.argv.findIndex((s) => s === '--theme' || s === '-t')
-const theme_name =
-	(theme_index > 1 && Bun.argv[theme_index + 1]) || 'default-dark'
+const themeIndex = Bun.argv.findIndex((s) => s === '--theme' || s === '-t')
+const themeName = (themeIndex > 1 && Bun.argv[themeIndex + 1]) || 'default-dark'
 
-const is_path = theme_name.endsWith('.toml')
-const theme_path = is_path ? theme_name : `themes/${theme_name}.toml`
+const isPath = themeName.endsWith('.toml')
+const themePath = isPath ? themeName : `themes/${themeName}.toml`
 
 let theme
 
 try {
-	theme = require(`../${theme_path}`)
+	theme = require(`../${themePath}`)
 } catch {
-	throw `Error finding or parsing file "${theme_path}"!`
+	throw `Error finding or parsing file "${themePath}"!`
 }
 
 // json to sass
@@ -21,15 +20,15 @@ function generateSassVariables(json: object): string {
 	let result = ''
 
 	for (const child in json) {
-		const child_value = json[child]
+		const childValue = json[child]
 
-		if (typeof child_value !== 'object') {
-			result += `${child}: ${child_value};\n`
+		if (typeof childValue !== 'object') {
+			result += `${child}: ${childValue};\n`
 		} else {
-			const more_childs = generateSassVariables(child_value).split('\n')
+			const moreChilds = generateSassVariables(childValue).split('\n')
 
-			for (const second_child of more_childs)
-				if (second_child !== '') result += `${child}-${second_child}\n`
+			for (const secondChild of moreChilds)
+				if (secondChild !== '') result += `${child}-${secondChild}\n`
 		}
 	}
 
@@ -42,7 +41,7 @@ for (const variable of generateSassVariables(theme.default).split('\n'))
 	if (variable !== '') variables += `$theme-${variable}\n`
 
 // build sass
-const build_result = compile('src/main.scss', {
+const buildResult = compile('src/main.scss', {
 	importers: [
 		{
 			canonicalize(url) {
@@ -60,4 +59,4 @@ const build_result = compile('src/main.scss', {
 	],
 })
 
-Bun.write('userChrome.css', build_result.css)
+Bun.write('userChrome.css', buildResult.css)

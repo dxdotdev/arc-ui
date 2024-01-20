@@ -6,6 +6,13 @@
 	"organizeImports": {
 		"enabled": true
 	},
+	"linter": {
+		"rules": {
+			"style": {
+				"useNamingConvention": "error"
+			}
+		}
+	},
 	"javascript": {
 		"formatter": {
 			"semicolons": "asNeeded",
