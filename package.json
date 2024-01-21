@@ -7,11 +7,15 @@
 	"type": "module",
 	"module": "scripts/build.ts",
 	"scripts": {
-		"build": "bun run scripts/build.ts"
+		"build": "bun run scripts/build.ts",
+		"watch": "bun run scripts/watch.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.2",
 		"@types/bun": "latest",
+		"@types/glob-watcher": "^5.0.5",
+		"cli-highlight": "^2.1.11",
+		"glob-watcher": "^6.0.0",
 		"sass": "^1.70.0"
 	},
 	"peerDependencies": {
