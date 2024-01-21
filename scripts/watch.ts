@@ -9,41 +9,41 @@ const theme = getThemeInArgs()
 let userChromeCssPath: string
 
 if (platform() === 'linux') {
-	const profilesConfig = await Bun.file(
-		`${homedir()}/.mozilla/firefox/profiles.ini`,
-	).text()
+  const profilesConfig = await Bun.file(
+    `${homedir()}/.mozilla/firefox/profiles.ini`,
+  ).text()
 
-	const pathLine = profilesConfig.split('\n').find((s) => s.startsWith('Path='))
-	const userFolder = pathLine?.split('=')[1]
-	userChromeCssPath = `${homedir()}/.mozilla/firefox/${userFolder}/chrome/userChrome.css`
+  const pathLine = profilesConfig.split('\n').find((s) => s.startsWith('Path='))
+  const userFolder = pathLine?.split('=')[1]
+  userChromeCssPath = `${homedir()}/.mozilla/firefox/${userFolder}/chrome/userChrome.css`
 
-	if (!userFolder || !(await Bun.file(userChromeCssPath).exists())) {
-		throw `Error while searching for userChrome.css in "${userChromeCssPath}"`
-	}
+  if (!userFolder || !(await Bun.file(userChromeCssPath).exists())) {
+    throw `Error while searching for userChrome.css in "${userChromeCssPath}"`
+  }
 } else {
-	throw `Error searching for userChrome.css in platform "${platform()}"`
+  throw `Error searching for userChrome.css in platform "${platform()}"`
 }
 
 const watcher = watch(['themes/*.toml', 'src/**/*.scss'])
 
 watcher.on('change', () => {
-	try {
-		const buildResult = compile('src/main.scss', {
-			importers: [themeToSass(theme)],
-		})
+  try {
+    const buildResult = compile('src/main.scss', {
+      importers: [themeToSass(theme)],
+    })
 
-		Bun.write(userChromeCssPath, buildResult.css)
-	} catch (error) {
-		console.log(error)
-	}
+    Bun.write(userChromeCssPath, buildResult.css)
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 console.log(
-	'Watching for changes! Paste this command into Firefox Debugger to enable updater:',
+  'Watching for changes! Paste this command into Firefox Debugger to enable updater:',
 )
 console.log(
-	highlight(
-		`
+  highlight(
+    `
   let io = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
   let ss = Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService);
   let ds = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties);
@@ -63,21 +63,21 @@ console.log(
       throw "Error updating userChrome.css file!"
     }
   }\n`,
-		{ language: 'javascript' },
-	),
+    { language: 'javascript' },
+  ),
 )
 
 console.log('To start the updater, run:')
 console.log(
-	highlight(
-		'  let userChromeCssUpdater = setInterval(updateUserChromeCss, 2500)\n',
-		{ language: 'javascript' },
-	),
+  highlight(
+    '  let userChromeCssUpdater = setInterval(updateUserChromeCss, 2500)\n',
+    { language: 'javascript' },
+  ),
 )
 
 console.log('To stop the updater, run:')
 console.log(
-	highlight('  clearInterval(userChromeCssUpdater)', {
-		language: 'javascript',
-	}),
+  highlight('  clearInterval(userChromeCssUpdater)', {
+    language: 'javascript',
+  }),
 )
