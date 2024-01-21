@@ -20,14 +20,15 @@ function generateSassVariables(json: object): string {
 
   for (const child in json) {
     const childValue = json[child]
+    const childInKebabCase = child.replaceAll('_', '-')
 
     if (typeof childValue !== 'object') {
-      result += `${child}: ${childValue};\n`
+      result += `${childInKebabCase}: ${childValue};\n`
     } else {
       const moreChilds = generateSassVariables(childValue).split('\n')
 
       for (const secondChild of moreChilds)
-        if (secondChild !== '') result += `${child}-${secondChild}\n`
+        if (secondChild !== '') result += `${childInKebabCase}-${secondChild}\n`
     }
   }
 
