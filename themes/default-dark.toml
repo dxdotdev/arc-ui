@@ -11,10 +11,10 @@ division = "#313131"
 text = "#eaeaea"
 
 [search_prompt.result_item]
-text = "#eaeaea"
+text = "#bfbfbf"
 text_url = "#545454"
 
 [search_prompt.result_item.selected]
-background = "#f2f2f2"
+background = "#2d2d2d"
 text = "#ffffff"
 text_url = "#828282"

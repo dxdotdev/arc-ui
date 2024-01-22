@@ -1,0 +1,12 @@
+@import "../variables.scss";
+
+#urlbar-input-container {
+  margin: 12px 0px;
+}
+
+#urlbar-input {
+  font-family: $font !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: $theme-search-prompt-input-text !important;
+}

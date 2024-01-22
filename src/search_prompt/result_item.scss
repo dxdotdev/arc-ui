@@ -1,0 +1,36 @@
+@import "../variables.scss";
+
+.urlbarView-row {
+  font-family: $font !important;
+  font-size: 16px;
+  border-radius: 10px !important;
+  font-weight: 600;
+  padding: 6px;
+  margin: 4px 0;
+}
+
+.urlbarView-title {
+  color: $theme-search-prompt-result-item-text !important;
+}
+
+.urlbarView-url {
+  font-size: 16px !important;
+  color: $theme-search-prompt-result-item-text-url !important;
+}
+
+.urlbarView-row:where([selected], :hover) {
+  background-color: $theme-search-prompt-result-item-selected-background !important;
+
+  .urlbarView-title {
+    color: $theme-search-prompt-result-item-selected-text !important;
+  }
+
+  .urlbarView-url {
+    color: $theme-search-prompt-result-item-selected-text-url !important;
+  }
+}
+
+#urlbar-anon-search-settings[selected],
+#urlbar-engine-one-off-item-bookmarks[selected] {
+  background-color: $theme-search-prompt-result-item-selected-background !important;
+}

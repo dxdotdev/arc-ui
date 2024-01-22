@@ -1,5 +1,15 @@
-@import "theme:colors";
+@import "variables.scss";
+@import "search_prompt";
 
-.test {
+#browser {
+  overflow: hidden;
+  padding: 8px;
   background-color: $theme-browser-background;
+  border: 1px solid $theme-browser-border;
+  border-radius: 12px;
+}
+
+#appcontent {
+  overflow: hidden;
+  border-radius: 7px / 5px;
 }
