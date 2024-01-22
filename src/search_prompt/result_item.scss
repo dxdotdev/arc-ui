@@ -5,7 +5,7 @@
   font-size: 16px;
   border-radius: 10px !important;
   font-weight: 600;
-  padding: 6px;
+  padding: 8px 6px;
   margin: 4px 0;
 }
 
@@ -28,9 +28,4 @@
   .urlbarView-url {
     color: $theme-search-prompt-result-item-selected-text-url !important;
   }
-}
-
-#urlbar-anon-search-settings[selected],
-#urlbar-engine-one-off-item-bookmarks[selected] {
-  background-color: $theme-search-prompt-result-item-selected-background !important;
 }

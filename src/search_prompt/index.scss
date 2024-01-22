@@ -2,6 +2,31 @@
 @import "input.scss";
 @import "result_item.scss";
 
+#PanelUI-button,
+#tracking-protection-icon-container,
+#nav-bar-customization-target > :not(#urlbar-container) {
+  display: none;
+}
+
+#urlbar-go-button,
+#page-action-buttons {
+  margin-left: 4px;
+}
+
+.identity-box-button:where([selected], :hover),
+.urlbar-page-action:where([selected], :hover),
+.searchbar-engine-one-off-item:where([selected], :hover) {
+  background-color: $theme-search-prompt-result-item-selected-background !important;
+}
+
+#urlbar,
+#urlbar-container,
+#urlbar-input-container {
+  --urlbar-height: 32px !important;
+  --urlbar-toolbar-height: 40px !important;
+  --urlbar-container-height: 40px !important;
+}
+
 #titlebar {
   display: none;
 }
@@ -30,12 +55,6 @@
   opacity: 0;
 }
 
-#PanelUI-button,
-#tracking-protection-icon-container,
-#nav-bar-customization-target > :not(#urlbar-container) {
-  display: none;
-}
-
 #urlbar-container {
   margin: 0 !important;
   padding: 0 !important;
@@ -46,15 +65,11 @@
   border: 1px solid $theme-search-prompt-border;
   border-radius: 14px;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 0 6px;
 }
 
 #urlbar-background {
   background-color: $theme-search-prompt-background !important;
-}
-
-#urlbar-go-button {
-  margin-left: 4px;
 }
 
 .search-one-offs,
