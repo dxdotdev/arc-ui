@@ -1,10 +1,11 @@
 @import "variables.scss";
 @import "search_prompt";
+@import "link_badge";
 
 #browser {
   overflow: hidden;
   padding: 8px;
-  background-color: $theme-browser-background;
+  background-color: $theme-browser-background !important;
   border: 1px solid $theme-browser-border;
   border-radius: 12px;
 }

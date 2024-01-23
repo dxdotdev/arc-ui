@@ -18,3 +18,8 @@ text_url = "#545454"
 background = "#2d2d2d"
 text = "#ffffff"
 text_url = "#828282"
+
+[link_badge]
+background = "#010101"
+border = "#323232"
+text = "#a9a9a9"
