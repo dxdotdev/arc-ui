@@ -11,6 +11,7 @@
     "watch": "bun run scripts/watch.ts"
   },
   "devDependencies": {
+    "@astrojs/cli-kit": "^0.4.1",
     "@biomejs/biome": "1.5.2",
     "@types/bun": "latest",
     "@types/glob-watcher": "^5.0.5",

@@ -1,21 +1,32 @@
 import type { Importer } from 'sass'
 
-export function getThemeInArgs(): { default: object } {
-  const themeIndex = Bun.argv.findIndex((s) => s === '--theme' || s === '-t')
-  const themeName =
-    (themeIndex > 1 && Bun.argv[themeIndex + 1]) || 'default-dark'
+import { color, label } from '@astrojs/cli-kit'
 
-  const isPath = themeName.endsWith('.toml')
-  const themePath = isPath ? themeName : `themes/${themeName}.toml`
-
-  try {
-    return require(`../${themePath}`)
-  } catch {
-    throw `Error finding or parsing file "${themePath}"!`
-  }
+export function time(): string {
+  return new Date().toLocaleTimeString()
 }
 
-function generateSassVariables(json: object): string {
+export function info(title: string, text: string) {
+  console.log(
+    `${time()}${label(`[${title}]`, color.visible, color.blue)}${text}`,
+  )
+}
+
+export function error(text: string) {
+  console.log(`${time()}${label('[error]', color.visible, color.red)}${text}`)
+}
+
+export function getThemeFromArgs(): object {
+  const tIndex = Bun.argv.findIndex((s) => s === '--theme' || s === '-t') + 1
+  const themePath =
+    (tIndex > 2 && Bun.argv[tIndex]) || 'themes/default-dark.toml'
+
+  info('check', `theme path: "${themePath}"`)
+
+  return require(`../${themePath}`).default
+}
+
+function objectToSassVariables(json: object): string {
   let result = ''
 
   for (const child in json) {
@@ -25,7 +36,7 @@ function generateSassVariables(json: object): string {
     if (typeof childValue !== 'object') {
       result += `${childInKebabCase}: ${childValue};\n`
     } else {
-      const moreChilds = generateSassVariables(childValue).split('\n')
+      const moreChilds = objectToSassVariables(childValue).split('\n')
 
       for (const secondChild of moreChilds)
         if (secondChild !== '') result += `${childInKebabCase}-${secondChild}\n`
@@ -35,10 +46,10 @@ function generateSassVariables(json: object): string {
   return result
 }
 
-export function themeToSass(theme: { default: object }) {
+export function themeToSass(theme: object) {
   let variables = ''
 
-  for (const variable of generateSassVariables(theme.default).split('\n'))
+  for (const variable of objectToSassVariables(theme).split('\n'))
     if (variable !== '') variables += `$theme-${variable}\n`
 
   return {
