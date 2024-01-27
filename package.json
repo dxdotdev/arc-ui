@@ -8,7 +8,7 @@
   "module": "scripts/build.ts",
   "scripts": {
     "build": "bun run scripts/build.ts",
-    "watch": "bun run scripts/watch.ts"
+    "dev": "bun run scripts/dev.ts"
   },
   "devDependencies": {
     "@astrojs/cli-kit": "^0.4.1",
