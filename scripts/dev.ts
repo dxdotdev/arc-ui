@@ -65,7 +65,7 @@ try {
   build(theme, userChromeCssPath)
 
   watcher.on('change', () => {
-    watcher = watch(['themes/*.toml', 'src/**/*.scss'])
+    watcher = watch(['src/**/*.scss'])
 
     build(theme, userChromeCssPath)
   })
