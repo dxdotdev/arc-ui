@@ -15,7 +15,7 @@
     "@types/glob-watcher": "^5.0.5",
     "cli-highlight": "^2.1.11",
     "glob-watcher": "^6.0.0",
-    "sass": "^1.70.0"
+    "lightningcss": "^1.25.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

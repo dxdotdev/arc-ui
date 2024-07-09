@@ -1,16 +1,13 @@
-import { homedir, platform } from 'os'
-import { compile } from 'sass'
+import { homedir } from 'node:os'
 import watch from 'glob-watcher'
 import { highlight } from 'cli-highlight'
 
-import { info, error, getThemeFromArgs, themeToSass } from './utils'
+import { info, error, build } from './utils'
 
 console.log()
 info('check', 'Checking data to start watching...')
 
 try {
-  const theme = getThemeFromArgs()
-
   const profilesConfig = await Bun.file(
     `${homedir()}/.mozilla/firefox/profiles.ini`,
   ).text()
@@ -19,7 +16,7 @@ try {
   const userFolder = pathLine?.split('=')[1]
   const userChromeCssPath = `${homedir()}/.mozilla/firefox/${userFolder}/chrome/userChrome.css`
 
-  let watcher = watch(['themes/*.toml', 'src/**/*.scss'])
+  let watcher = watch(['src/**/*.css'])
 
   info(
     'watch',
@@ -62,29 +59,16 @@ try {
   )
   console.log()
 
-  build(theme, userChromeCssPath)
+  info('watch', 'Change detected')
+  build(userChromeCssPath)
 
   watcher.on('change', () => {
     watcher = watch(['src/**/*.scss'])
 
-    build(theme, userChromeCssPath)
+    info('watch', 'Change detected')
+    build(userChromeCssPath)
   })
 } catch (err) {
   error('Got error:')
   console.log(`\n${err}\n`)
-}
-
-function build(theme: object, userChromeCssPath: string) {
-  try {
-    info('watch', 'Change detected')
-
-    const buildResult = compile('src/main.scss', {
-      importers: [themeToSass(theme)],
-    })
-
-    Bun.write(userChromeCssPath, buildResult.css)
-  } catch (err) {
-    error('Got error:')
-    console.log(`\n${err}\n`)
-  }
 }
