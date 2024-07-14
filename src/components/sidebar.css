@@ -1,0 +1,35 @@
+#sidebar-box {
+  overflow: hidden;
+  border: 2px solid var(--color-stroke) !important;
+  border-radius: var(--surface-rounding) !important;
+  box-shadow: var(--surface-shadow);
+
+  &[sidebarcommand*="sidebar-action"] > #sidebar-header {
+    display: none !important;
+  }
+
+  /* TODO: add sidebar open on hover; */
+  /* &[hidden="true"] { */
+  /* display: block !important; */
+  /* height: calc(100% - 2 * var(--browser-padding)); */
+  /* position: absolute; */
+  /* top: var(--browser-padding) !important; */
+  /* left: var(--browser-padding) !important; */
+  /* z-index: 10; */
+  /* transform: translateX(-99%); */
+  /* } */
+}
+
+#sidebar-header {
+  border: none !important;
+}
+
+:is(#sidebar-switcher-target, #sidebar-close):hover {
+  background-color: var(--color-surface-highlight) !important;
+}
+
+#sidebar-splitter {
+  width: calc(var(--browser-padding) / 2) !important;
+  background-color: transparent !important;
+  border: none !important;
+}
