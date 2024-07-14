@@ -1,8 +1,9 @@
 import { homedir } from 'node:os'
+import clipboard from 'clipboardy'
 import watch from 'glob-watcher'
 import { highlight } from 'cli-highlight'
 
-import { info, error, build } from './utils'
+import { info, error, build, autoReloadCode } from './utils'
 
 console.log()
 info('check', 'Checking data to start watching...')
@@ -23,33 +24,14 @@ try {
     'Watching for file changes! Paste this command into Firefox Browser Toolbox to enable the updater:',
   )
 
-  console.log(
-    highlight(
-      `
-  let io = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
-  let ss = Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService);
-  let ds = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties);
+  console.log(highlight(autoReloadCode, { language: 'javascript' }))
 
-  let chromepath = ds.get("UChrm", Ci.nsIFile);
-  chromepath.append("userChrome.css");
-  let chromefile = io.newFileURI(chromepath);
-
-  function updateUserChromeCss() {
-    try {
-      if (ss.sheetRegistered(chromefile, ss.USER_SHEET)) {
-        ss.unregisterSheet(chromefile, ss.USER_SHEET);
-      }
-
-      ss.loadAndRegisterSheet(chromefile, ss.USER_SHEET);
-    } catch {
-      throw "Error updating userChrome.css file!"
-    }
+  try {
+    clipboard.writeSync(autoReloadCode)
+    info('clipboard', 'Copied to code to clipboard!')
+  } catch (err) {
+    error("Can't to copy code to clipboard:", err)
   }
-
-  let userChromeCssUpdater = setInterval(updateUserChromeCss, 2500);\n`,
-      { language: 'javascript' },
-    ),
-  )
 
   info('watch', 'To stop the updater, run:')
   console.log(
@@ -69,6 +51,5 @@ try {
     build(userChromeCssPath)
   })
 } catch (err) {
-  error('Got error:')
-  console.log(`\n${err}\n`)
+  error('Got error:', err)
 }
