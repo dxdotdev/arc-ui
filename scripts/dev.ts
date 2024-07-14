@@ -17,11 +17,13 @@ try {
   const userFolder = pathLine?.split('=')[1]
   const userChromeCssPath = `${homedir()}/.mozilla/firefox/${userFolder}/chrome/userChrome.css`
 
+  info('check', `UserChrome.css file path: ${userChromeCssPath}`)
+
   let watcher = watch(['src/**/*.css'])
 
   info(
     'watch',
-    'Watching for file changes! Paste this command into Firefox Browser Toolbox to enable the updater:',
+    'Watching for file changes! Paste this command into Firefox Browser Toolbox to enable the updater (Ctrl+Alt+Shift-I):',
   )
 
   console.log(highlight(autoReloadCode, { language: 'javascript' }))
