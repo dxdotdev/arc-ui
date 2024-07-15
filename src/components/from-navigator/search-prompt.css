@@ -1,6 +1,6 @@
 #navigator-toolbox {
   &:not(:focus-within) #urlbar,
-  #urlbar:not([breakout-extend]) {
+  #urlbar-container:not(:has(#urlbar[breakout-extend])) {
     left: 200%;
   }
 }
