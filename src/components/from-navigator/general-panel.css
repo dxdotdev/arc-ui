@@ -51,7 +51,8 @@
   border: none !important;
 }
 
-#nav-bar-customization-target {
+#nav-bar-customization-target,
+#PlacesToolbarItems {
   display: flex !important;
   justify-content: end;
 }

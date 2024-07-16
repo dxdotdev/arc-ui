@@ -16,6 +16,7 @@ screenshots-buttons {
   border-radius: calc(var(--surface-rounding) - 0.5rem) !important;
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
+  transition: background-color 100ms ease-in-out;
 
   &:hover {
     background-color: var(--color-surface-highlight) !important;
