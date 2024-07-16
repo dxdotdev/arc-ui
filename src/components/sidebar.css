@@ -11,12 +11,17 @@
   /* TODO: add sidebar open on hover; */
   /* &[hidden="true"] { */
   /* display: block !important; */
-  /* height: calc(100% - 2 * var(--browser-padding)); */
+  /* height: calc(100% - var(--browser-padding)); */
   /* position: absolute; */
-  /* top: var(--browser-padding) !important; */
-  /* left: var(--browser-padding) !important; */
+  /* top: calc(var(--browser-padding) / 2) !important; */
+  /* left: calc(var(--browser-padding) / 2) !important; */
   /* z-index: 10; */
   /* transform: translateX(-99%); */
+  /* transition: transform 200ms ease-in-out; */
+
+  /* &:hover { */
+  /* transform: translateX(0); */
+  /* } */
   /* } */
 }
 
