@@ -23,7 +23,7 @@ try {
 
   info(
     'watch',
-    'Watching for file changes! Paste this command into Firefox Browser Toolbox to enable the updater (Ctrl+Alt+Shift-I):',
+    'Watching for file changes! Paste this command into Firefox Browser Toolbox to enable the updater (Ctrl+Alt+Shift+I):',
   )
 
   console.log(highlight(autoReloadCode, { language: 'javascript' }))
