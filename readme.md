@@ -17,3 +17,10 @@
 
 Arc UI Theme is a custom [userChrome.css] packed with styles to make your browser look and feel like [Arc Browser].
 Install [Arc UI Addon] to a complete experience.
+
+<br />
+
+<div align="right">
+  <img src="https://raw.githubusercontent.com/dxdotdev/arc-ui/main/.github/assets/ui.png" />
+  Theme: <a href="https://github.com/catppuccin/firefox">Catppuccin Macchiato - Blue</a>
+</div>
