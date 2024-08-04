@@ -1,0 +1,68 @@
+#back-button,
+#forward-button,
+#stop-reload-button,
+#customizableui-special-spring1,
+#customizableui-special-spring2 {
+  display: none !important;
+}
+
+.browser-toolbar {
+  background-color: transparent !important;
+}
+
+#navigator-toolbox {
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  top: calc(var(--browser-padding) + 0.5rem);
+  right: calc(var(--browser-padding) + 0.5rem);
+  display: flex !important;
+  border: 2px solid var(--color-stroke) !important;
+  border-radius: var(--surface-rounding) !important;
+  background-image: none !important;
+  background-color: var(--color-surface) !important;
+  box-shadow: var(--surface-shadow);
+
+  &:not(:focus-within) {
+    left: 100%;
+  }
+
+  toolbarbutton:is(.toolbarbutton-1, .bookmark-item) {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    transition: background-color 100ms ease-in-out;
+
+    .toolbarbutton-icon,
+    .toolbarbutton-badge-stack {
+      margin: auto !important;
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      background-color: var(--color-surface-highlight) !important;
+    }
+  }
+}
+
+#nav-bar {
+  border: none !important;
+}
+
+#nav-bar-customization-target,
+#PlacesToolbarItems {
+  display: flex !important;
+  justify-content: end;
+}
+
+#PersonalToolbar {
+  width: 100%;
+  padding: 0 !important;
+
+  #personal-toolbar-empty-description,
+  .toolbarbutton-text {
+    display: none !important;
+  }
+}

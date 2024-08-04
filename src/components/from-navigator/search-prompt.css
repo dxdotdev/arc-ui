@@ -1,0 +1,86 @@
+#navigator-toolbox {
+  &:not(:focus-within) #urlbar,
+  #urlbar-container:not(:has(#urlbar[breakout-extend])) {
+    left: 200%;
+  }
+}
+
+#urlbar,
+#urlbar-container,
+#urlbar-input-container {
+  --urlbar-height: 32px !important;
+  --urlbar-toolbar-height: 4rem !important;
+  --urlbar-container-height: 4rem !important;
+}
+
+#urlbar {
+  transition: none !important;
+  border: 2px solid var(--color-stroke) !important;
+  border-radius: var(--surface-rounding) !important;
+  background-color: var(--color-surface) !important;
+  box-shadow: var(--surface-shadow);
+  padding: 0.2rem !important;
+}
+
+#urlbar-background {
+  border: none !important;
+  border-radius: calc(var(--surface-rounding) - 2px) !important;
+  background-color: transparent !important;
+}
+
+#urlbar-container {
+  position: fixed !important;
+  z-index: 10;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(40rem, 40rem + 35vw, 50rem) !important;
+}
+
+#urlbar-go-button {
+  margin: auto 0;
+}
+
+.urlbar-input-box {
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+#urlbar-results {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.urlbarView-body-inner,
+.search-one-offs {
+  border: none !important;
+}
+
+.urlbarView-body-outer {
+  border-top: 2px solid var(--color-stroke);
+  border-bottom: 2px solid var(--color-stroke);
+}
+
+.urlbarView-row {
+  height: 3.5rem !important;
+  transition: background-color 100ms ease-in-out;
+  border-radius: var(--surface-rounding) !important;
+
+  &[selected],
+  &:hover {
+    background-color: var(--color-surface-highlight) !important;
+  }
+}
+
+.searchbar-engine-one-off-item[selected] {
+  background-color: var(--color-surface-highlight) !important;
+}
+
+.search-one-offs {
+  height: 3.5rem !important;
+
+  & > * {
+    margin: auto 0 !important;
+  }
+}

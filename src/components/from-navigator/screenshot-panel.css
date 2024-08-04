@@ -1,0 +1,30 @@
+screenshots-buttons {
+  position: fixed !important;
+  top: calc(var(--browser-padding) + 0.5rem) !important;
+  right: calc(var(--browser-padding) + 0.5rem) !important;
+  border: 2px solid var(--color-stroke) !important;
+  border-radius: var(--surface-rounding) !important;
+  background-color: var(--color-surface) !important;
+  box-shadow: var(--surface-shadow);
+  padding: 0.5rem !important;
+}
+
+#visible-page,
+#full-page {
+  width: 7.5rem;
+  height: 6rem;
+  border-radius: calc(var(--surface-rounding) - 0.5rem) !important;
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  transition: background-color 100ms ease-in-out;
+
+  &:hover {
+    background-color: var(--color-surface-highlight) !important;
+  }
+
+  padding-bottom: 0 !important;
+}
+
+#full-page {
+  margin-left: 0.5rem !important;
+}

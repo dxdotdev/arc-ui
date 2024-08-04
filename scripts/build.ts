@@ -1,17 +1,10 @@
-import { compile } from 'sass'
-import { info, error, themeToSass, getThemeFromArgs } from './utils'
+import { info, error, build } from './utils'
 
 console.log()
 info('check', 'Getting data to start building...')
 
 try {
-  const theme = getThemeFromArgs()
-
-  const buildResult = compile('src/main.scss', {
-    importers: [themeToSass(theme)],
-  })
-
-  Bun.write('userChrome.css', buildResult.css)
+  build('userChrome.css')
   info('build', `output: "userChrome.css"`)
 
   info('build', 'Complete!')

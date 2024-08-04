@@ -1,0 +1,16 @@
+#statuspanel {
+  margin: 0.5rem !important;
+  padding: 0.25rem 1rem !important;
+  border: 2px solid var(--color-stroke) !important;
+  border-radius: var(--surface-rounding) !important;
+  background-color: var(--color-surface) !important;
+}
+
+#statuspanel-label {
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--color-text) !important;
+  font-size: 14px;
+  font-weight: 600;
+}
