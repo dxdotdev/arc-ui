@@ -24,3 +24,19 @@ Install [Arc UI Addon] to a complete experience.
   <img src="https://raw.githubusercontent.com/dxdotdev/arc-ui/main/.github/assets/ui.png" />
   Theme: <a href="https://github.com/catppuccin/firefox">Catppuccin Macchiato - Blue</a>
 </div>
+
+## Install
+
+To install the userChrome.css, close Firefox and follow the steps below:
+
+- Linux
+
+Just run the command
+
+```bash
+bash -c "$(curl https://raw.githubusercontent.com/dxdotdev/arc-ui-theme/main/scripts/install.sh)"
+```
+
+- Windows
+
+**_TODO_**
