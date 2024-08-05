@@ -30,7 +30,7 @@ try {
 
   try {
     clipboard.writeSync(autoReloadCode)
-    info('clipboard', 'Copied to code to clipboard!')
+    info('clipboard', 'Copied code to clipboard!')
   } catch (err) {
     error("Can't to copy code to clipboard:", err)
   }

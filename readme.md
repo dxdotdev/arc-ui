@@ -31,12 +31,16 @@ To install the userChrome.css, close Firefox and follow the steps below:
 
 - Linux
 
-Just run the command
+  Just run the command
 
-```bash
-bash -c "$(curl https://raw.githubusercontent.com/dxdotdev/arc-ui-theme/main/scripts/install.sh)"
-```
+  ```bash
+  bash -c "$(curl https://raw.githubusercontent.com/dxdotdev/arc-ui-theme/main/scripts/install.sh)"
+  ```
 
 - Windows
 
-**_TODO_**
+  **_TODO_**
+
+## Contributing
+
+See [Contributing Guide](./.github/CONTRIBUTING.md).
