@@ -47,7 +47,7 @@ try {
   build(userChromeCssPath)
 
   watcher.on('change', () => {
-    watcher = watch(['src/**/*.scss'])
+    watcher = watch(['src/**/*.css'])
 
     info('watch', 'Change detected')
     build(userChromeCssPath)
