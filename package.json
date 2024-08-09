@@ -12,15 +12,14 @@
     "@astrojs/cli-kit": "^0.4.1",
     "@biomejs/biome": "1.5.2",
     "@types/bun": "latest",
-    "@types/glob-watcher": "^5.0.5",
     "cli-highlight": "^2.1.11",
-    "glob-watcher": "^6.0.0",
     "lightningcss": "^1.25.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "clipboardy": "^4.0.0"
+    "clipboardy": "^4.0.0",
+    "glob": "^11.0.0"
   }
 }

@@ -1,9 +1,9 @@
+import { watch } from 'node:fs'
 import { homedir } from 'node:os'
-import clipboard from 'clipboardy'
-import watch from 'glob-watcher'
 import { highlight } from 'cli-highlight'
+import clipboard from 'clipboardy'
 
-import { info, error, build, autoReloadCode } from './utils'
+import { autoReloadCode, build, error, info } from './utils'
 
 console.log()
 info('check', 'Checking data to start watching...')
@@ -18,8 +18,6 @@ try {
   const userChromeCssPath = `${homedir()}/.mozilla/firefox/${userFolder}/chrome/userChrome.css`
 
   info('check', `UserChrome.css file path: ${userChromeCssPath}`)
-
-  let watcher = watch(['src/**/*.css'])
 
   info(
     'watch',
@@ -46,11 +44,29 @@ try {
   info('watch', 'Change detected')
   build(userChromeCssPath)
 
-  watcher.on('change', () => {
-    watcher = watch(['src/**/*.css'])
+  let changeCounter = 0
 
-    info('watch', 'Change detected')
-    build(userChromeCssPath)
+  const watcher = watch(
+    import.meta.dir.replace('/scripts', '/src'),
+    { recursive: true },
+    () => {
+      if (changeCounter === 0) {
+        info('watch', 'Change detected')
+        build(userChromeCssPath)
+
+        changeCounter++
+        return
+      }
+
+      changeCounter = 0
+    },
+  )
+
+  process.on('SIGINT', () => {
+    info('watch', 'Closing watcher...')
+    watcher.close()
+
+    process.exit(0)
   })
 } catch (err) {
   error('Got error:', err)
