@@ -1,17 +1,3 @@
-#titlebar {
-  position: fixed !important;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: var(--browser-padding);
-
-  & > *,
-  .titlebar-buttonbox {
-    display: none;
-  }
-}
-
 #toolbar-menubar {
   display: block;
 
