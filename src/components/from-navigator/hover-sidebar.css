@@ -1,0 +1,15 @@
+#navigator-toolbox {
+  position: absolute;
+  z-index: 10;
+  top: calc(50% - 2px);
+  left: calc(var(--browser-padding) / 2);
+  transform: translateY(-50%);
+  width: 260px !important;
+  height: calc(100% - var(--browser-padding)) !important;
+
+  border: 2px solid var(--color-stroke) !important;
+  border-radius: var(--surface-rounding) !important;
+  background-color: var(--color-surface) !important;
+  box-shadow: var(--surface-shadow);
+  padding: 0.2rem !important;
+}

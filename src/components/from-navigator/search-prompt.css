@@ -1,7 +1,7 @@
 #navigator-toolbox {
   &:not(:focus-within) #urlbar,
   #urlbar-container:not(:has(#urlbar[breakout-extend])) {
-    left: 200%;
+    left: 200vw;
   }
 }
 
@@ -31,8 +31,8 @@
 #urlbar-container {
   position: fixed !important;
   z-index: 10;
-  top: 30%;
-  left: 50%;
+  top: 28vh;
+  left: 50vw;
   transform: translateX(-50%);
   width: clamp(40rem, 40rem + 35vw, 50rem) !important;
 }
