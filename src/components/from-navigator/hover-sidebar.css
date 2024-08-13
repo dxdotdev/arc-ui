@@ -4,12 +4,106 @@
   top: calc(50% - 2px);
   left: calc(var(--browser-padding) / 2);
   transform: translateY(-50%);
-  width: 260px !important;
+  width: 300px !important;
   height: calc(100% - var(--browser-padding)) !important;
 
   border: 2px solid var(--color-stroke) !important;
   border-radius: var(--surface-rounding) !important;
   background-color: var(--color-surface) !important;
   box-shadow: var(--surface-shadow);
-  padding: 0.2rem !important;
+  padding: 0.5rem !important;
+}
+
+.titlebar-spacer,
+#customizableui-special-spring1,
+#customizableui-special-spring2,
+#OtherBookmarks {
+  display: none;
+}
+
+#save-to-pocket-button,
+#fxa-toolbar-menu-button,
+#unified-extensions-button,
+#PanelUI-menu-button {
+  display: none;
+}
+
+#titlebar {
+  height: 2.182rem !important;
+}
+
+#PanelUI-menu-button {
+  --toolbar-start-end-padding: 2px;
+}
+
+#nav-bar {
+  position: absolute !important;
+  top: 0.5rem;
+  right: 0.5rem;
+  --toolbar-bgcolor: transparent;
+}
+
+.titlebar-button {
+  padding: 0.3rem !important;
+
+  image {
+    width: 1rem !important;
+    height: 1rem !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-image: none !important;
+    transition: background-color 100ms ease-in-out;
+  }
+
+  &.titlebar-close:hover image {
+    background-color: #f87171 !important;
+  }
+
+  &.titlebar-min:hover image {
+    background-color: #fcd34d !important;
+  }
+
+  &:where(.titlebar-max, .titlebar-restore):hover image {
+    background-color: #4ade80 !important;
+  }
+}
+
+#PersonalToolbar {
+  padding: 0 !important;
+  max-height: none !important;
+}
+
+#PlacesToolbarItems {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.bookmark-item {
+  visibility: visible !important;
+  height: 3.6rem;
+  margin: 0 !important;
+  border-radius: var(--surface-rounding) !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transition: background-color 100ms ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .toolbarbutton-icon {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    margin-inline-end: 0 !important;
+  }
+
+  .toolbarbutton-text {
+    display: none !important;
+  }
+}
+
+#TabsToolbar-customization-target {
+  position: absolute;
+  top: 200px;
+  left: 0.5rem;
+  width: 100%;
 }
