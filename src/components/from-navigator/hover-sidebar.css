@@ -1,4 +1,7 @@
 #navigator-toolbox {
+  --sidebar-element-background-color: rgba(255, 255, 255, 0.15);
+  --sidebar-element-hover-background-color: rgba(255, 255, 255, 0.3);
+
   position: absolute;
   z-index: 10;
   top: calc(50% - 2px);
@@ -11,7 +14,7 @@
   border-radius: var(--surface-rounding) !important;
   background-color: var(--color-surface) !important;
   box-shadow: var(--surface-shadow);
-  padding: 0.5rem !important;
+  padding: 0.4rem !important;
 }
 
 .titlebar-spacer,
@@ -29,7 +32,7 @@
 }
 
 #titlebar {
-  height: 2.182rem !important;
+  height: 2rem !important;
 }
 
 #PanelUI-menu-button {
@@ -38,18 +41,18 @@
 
 #nav-bar {
   position: absolute !important;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.4rem;
+  right: 0.4rem;
   --toolbar-bgcolor: transparent;
 }
 
 .titlebar-button {
-  padding: 0.3rem !important;
+  padding: 0.25rem !important;
 
   image {
-    width: 1rem !important;
-    height: 1rem !important;
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+    background-color: var(--sidebar-element-background-color) !important;
     background-image: none !important;
     transition: background-color 100ms ease-in-out;
   }
@@ -74,21 +77,21 @@
 
 #PlacesToolbarItems {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.4rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: calc(0.5rem + 3.6rem + 0.5rem);
+  padding-top: calc(0.4rem + 3.5rem + 0.4rem);
 }
 
 .bookmark-item {
   visibility: visible !important;
-  height: 3.6rem;
+  height: 3.5rem;
   margin: 0 !important;
   border-radius: var(--surface-rounding) !important;
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: var(--sidebar-element-background-color) !important;
   transition: background-color 100ms ease-in-out;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.3) !important;
+    background-color: var(--sidebar-element-hover-background-color) !important;
   }
 
   .toolbarbutton-icon {
@@ -105,6 +108,7 @@
 #TabsToolbar-customization-target {
   position: absolute;
   top: 300px;
-  left: 0.5rem;
-  width: 100%;
+  left: 0;
+  margin: 0 0.4rem;
+  width: calc(100% - 0.8rem);
 }
