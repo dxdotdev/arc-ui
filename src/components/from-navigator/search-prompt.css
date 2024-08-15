@@ -8,7 +8,6 @@
   #urlbar {
     height: 3.5rem !important;
     border: none !important;
-    padding: 0 !important;
     background-color: var(--sidebar-element-background-color) !important;
     box-shadow: none;
     transition: background-color 100ms ease-in-out !important;

@@ -1,13 +1,9 @@
 #toolbar-menubar {
   display: block;
-
-  &:not([inactive]) #menubar-items {
-    position: absolute;
-  }
+  position: absolute;
 }
 
 #menubar-items {
-  z-index: 10;
   top: calc(var(--browser-padding) + 0.5rem);
   left: calc(var(--browser-padding) + 0.5rem);
 }
