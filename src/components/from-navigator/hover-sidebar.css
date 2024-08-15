@@ -1,20 +1,22 @@
 #navigator-toolbox {
   --sidebar-element-background-color: rgba(255, 255, 255, 0.15);
   --sidebar-element-hover-background-color: rgba(255, 255, 255, 0.3);
+  --sidebar-padding: 0.4rem;
+  --sidebar-height: 300px;
 
   position: absolute;
   z-index: 10;
   top: calc(50% - 2px);
   left: calc(var(--browser-padding) / 2);
   transform: translateY(-50%);
-  width: 300px !important;
+  width: var(--sidebar-height) !important;
   height: calc(100% - var(--browser-padding)) !important;
 
   border: 2px solid var(--color-stroke) !important;
   border-radius: var(--surface-rounding) !important;
   background-color: var(--color-surface) !important;
   box-shadow: var(--surface-shadow);
-  padding: 0.4rem !important;
+  padding: var(--sidebar-padding) !important;
 }
 
 .titlebar-spacer,
@@ -24,10 +26,12 @@
   display: none;
 }
 
+/* TODO: temporary */
 #save-to-pocket-button,
 #fxa-toolbar-menu-button,
 #unified-extensions-button,
-#PanelUI-menu-button {
+#PanelUI-menu-button,
+#alltabs-button {
   display: none;
 }
 
@@ -41,8 +45,8 @@
 
 #nav-bar {
   position: absolute !important;
-  top: 0.4rem;
-  right: 0.4rem;
+  top: var(--sidebar-padding);
+  right: var(--sidebar-padding);
   --toolbar-bgcolor: transparent;
 }
 
@@ -80,16 +84,17 @@
   width: calc(100% - 0.8rem);
   height: 3.5rem;
   position: absolute;
-  top: calc(0.4rem + 2rem + 0.4rem);
+  top: calc(var(--sidebar-padding) + 2rem + var(--sidebar-padding));
   border-radius: var(--surface-rounding);
   background-color: var(--sidebar-element-background-color);
 }
 
 #PlacesToolbarItems {
   display: grid;
-  gap: 0.4rem;
+  overflow: visible !important;
+  gap: var(--sidebar-padding);
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: calc(0.4rem + 3.5rem + 0.4rem);
+  padding-top: calc(var(--sidebar-padding) + 3.5rem + var(--sidebar-padding));
 
   .bookmark-item {
     visibility: visible !important;
@@ -117,10 +122,31 @@
   }
 }
 
-#TabsToolbar-customization-target {
+#tabbrowser-arrowscrollbox {
   position: absolute;
-  top: 300px;
-  left: 0;
-  margin: 0 0.4rem;
-  width: calc(100% - 0.8rem);
+  top: 400px;
+  right: 0;
+  width: calc(var(--sidebar-height) - 1.05rem) !important;
+  height: 200px;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  border-inline-start: none !important;
+  padding-inline-start: 0 !important;
+  margin-inline-start: 0 !important;
+
+  .tabbrowser-tab {
+    height: 3.5rem;
+  }
+}
+
+#firefox-view-button {
+  position: absolute;
+  bottom: var(--sidebar-padding);
+  left: var(--sidebar-padding);
+}
+
+#new-tab-button {
+  position: absolute;
+  bottom: var(--sidebar-padding);
+  right: var(--sidebar-padding);
 }
