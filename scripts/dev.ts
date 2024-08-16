@@ -46,7 +46,7 @@ try {
 
   let changeCounter = 0
 
-  const watcher = watch(
+  watch(
     import.meta.dir.replace('/scripts', '/src'),
     { recursive: true },
     () => {
@@ -61,13 +61,6 @@ try {
       changeCounter = 0
     },
   )
-
-  process.on('SIGINT', () => {
-    info('watch', 'Closing watcher...')
-    watcher.close()
-
-    process.exit(0)
-  })
 } catch (err) {
   error('Got error:', err)
 }
