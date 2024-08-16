@@ -2,14 +2,14 @@
   --sidebar-element-background-color: rgba(255, 255, 255, 0.15);
   --sidebar-element-hover-background-color: rgba(255, 255, 255, 0.3);
   --sidebar-padding: 0.4rem;
-  --sidebar-height: 300px;
+  --sidebar-width: 300px;
 
   position: absolute;
   z-index: 10;
   top: calc(50% - 2px);
   left: calc(var(--browser-padding) / 2);
   transform: translateY(-50%);
-  width: var(--sidebar-height) !important;
+  width: var(--sidebar-width) !important;
   height: calc(100% - var(--browser-padding)) !important;
 
   border: 2px solid var(--color-stroke) !important;
@@ -44,10 +44,12 @@
 }
 
 #nav-bar {
+  --toolbar-bgcolor: transparent;
+
   position: absolute !important;
   top: var(--sidebar-padding);
   right: var(--sidebar-padding);
-  --toolbar-bgcolor: transparent;
+  border: none !important;
 }
 
 .titlebar-button {
@@ -126,10 +128,7 @@
   position: absolute;
   top: 400px;
   right: 0;
-  width: calc(var(--sidebar-height) - 1.05rem) !important;
-  height: 200px;
-  flex-direction: column !important;
-  flex-wrap: wrap !important;
+  width: calc(var(--sidebar-width) - 1.05rem) !important;
   border-inline-start: none !important;
   padding-inline-start: 0 !important;
   margin-inline-start: 0 !important;
@@ -143,10 +142,19 @@
   position: absolute;
   bottom: var(--sidebar-padding);
   left: var(--sidebar-padding);
+
+  image {
+    transition: background-color 100ms ease-in-out;
+  }
 }
 
 #new-tab-button {
+  display: block !important;
   position: absolute;
   bottom: var(--sidebar-padding);
   right: var(--sidebar-padding);
+
+  image {
+    transition: background-color 100ms ease-in-out;
+  }
 }
