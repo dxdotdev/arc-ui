@@ -16,7 +16,13 @@ The Arc UI - Theme repo is using [bun](https://bun.sh). Make sure you have the [
 
 4. And follow the instructions in the command
 
-**Obs:** Sometimes the development server has issues ([#8](https://github.com/dxdotdev/arc-ui-theme/issues/8)), restarting server and/or Firefox solves.
+**Obs:** Sometimes Firefox stops updating on changes, to solve this follow the instructions:
+
+1. Close Firefox and stop development server
+
+2. Open Firefox
+
+3. Run development server again and follow instructions normally
 
 ## Pull Request Guidelines
 

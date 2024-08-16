@@ -1,4 +1,4 @@
-import { watch } from 'node:fs'
+import { watch, unlinkSync, existsSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { highlight } from 'cli-highlight'
 import clipboard from 'clipboardy'
@@ -18,6 +18,11 @@ try {
   const userChromeCssPath = `${homedir()}/.mozilla/firefox/${userFolder}/chrome/userChrome.css`
 
   info('check', `UserChrome.css file path: ${userChromeCssPath}`)
+
+  if (existsSync(userChromeCssPath)) {
+    info('check', 'Deleting previous userChrome.css file..')
+    unlinkSync(userChromeCssPath)
+  }
 
   info(
     'watch',
