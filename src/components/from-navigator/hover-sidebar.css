@@ -8,7 +8,7 @@
   z-index: 10;
   top: calc(50% - 2px);
   left: calc(var(--browser-padding) / 2);
-  transform: translateY(-50%);
+  transform: translate(calc(-100% - var(--browser-padding) / 2), -50%);
   width: var(--sidebar-width) !important;
   height: calc(100% - var(--browser-padding)) !important;
 
@@ -17,6 +17,28 @@
   background-color: var(--color-surface) !important;
   box-shadow: var(--surface-shadow);
   padding: var(--sidebar-padding) !important;
+  transition: transform 100ms ease-in-out !important;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: var(--browser-padding);
+    height: 100%;
+  }
+
+  &::before {
+    left: calc(-1 * var(--browser-padding));
+  }
+
+  &::after {
+    right: calc(-1 * var(--browser-padding));
+  }
+
+  &:hover {
+    transform: translate(0, -50%);
+  }
 }
 
 .titlebar-spacer,

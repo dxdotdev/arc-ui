@@ -3,11 +3,6 @@
   position: absolute;
 }
 
-#menubar-items {
-  top: calc(var(--browser-padding) + 0.5rem);
-  left: calc(var(--browser-padding) + 0.5rem);
-}
-
 #main-menubar {
   overflow: hidden;
   display: flex !important;
