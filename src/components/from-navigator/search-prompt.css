@@ -79,7 +79,11 @@
   position: fixed !important;
   z-index: 10;
   top: 28vh;
-  left: 50vw;
+  left: calc(
+    50vw - var(--browser-padding) + var(--sidebar-correction) *
+      (var(--sidebar-width) + var(--browser-padding) / 2) -
+      var(--browser-padding) / 2
+  );
   transform: translateX(-50%);
   width: clamp(35rem, 35rem + 35vw, 46rem) !important;
 }

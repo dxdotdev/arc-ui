@@ -1,23 +1,33 @@
+@property --sidebar-correction {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: true;
+}
+
 #navigator-toolbox {
   --sidebar-element-background-color: rgba(255, 255, 255, 0.15);
   --sidebar-element-hover-background-color: rgba(255, 255, 255, 0.3);
   --sidebar-padding: 0.4rem;
   --sidebar-width: 300px;
+  --sidebar-translate: var(--sidebar-width) + var(--browser-padding) / 2;
+  --sidebar-correction: 1;
 
   position: absolute;
   z-index: 10;
-  top: calc(50% - 2px);
-  left: calc(var(--browser-padding) / 2);
-  transform: translate(calc(-100% - var(--browser-padding) / 2), -50%);
+  top: 50vh;
+  left: calc(-1 * var(--sidebar-width));
+  transform: translateY(-50%);
   width: var(--sidebar-width) !important;
-  height: calc(100% - var(--browser-padding)) !important;
+  height: calc(100vh - var(--browser-padding)) !important;
 
   border: 2px solid var(--color-stroke) !important;
   border-radius: var(--surface-rounding) !important;
   background-color: var(--color-surface) !important;
   box-shadow: var(--surface-shadow);
   padding: var(--sidebar-padding) !important;
-  transition: transform 100ms ease-in-out !important;
+  transition:
+    left 200ms ease-in-out,
+    --sidebar-correction 200ms ease-in-out !important;
 
   &::before,
   &::after {
@@ -36,8 +46,9 @@
     right: calc(-1 * var(--browser-padding));
   }
 
-  &:hover {
-    transform: translate(0, -50%);
+  &:not(:has(#urlbar[breakout-extend]:hover)):hover {
+    --sidebar-correction: 0;
+    left: calc(var(--browser-padding) / 2);
   }
 }
 
