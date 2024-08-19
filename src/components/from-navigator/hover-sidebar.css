@@ -11,6 +11,7 @@
   --sidebar-width: 300px;
   --sidebar-translate: var(--sidebar-width) + var(--browser-padding) / 2;
   --sidebar-correction: 1;
+  --tab-selected-bgcolor: var(--sidebar-element-hover-background-color);
 
   position: absolute;
   z-index: 10;
@@ -26,8 +27,8 @@
   box-shadow: var(--surface-shadow);
   padding: var(--sidebar-padding) !important;
   transition:
-    left 200ms ease-in-out,
-    --sidebar-correction 200ms ease-in-out !important;
+    left 150ms ease-in-out,
+    --sidebar-correction 150ms ease-in-out !important;
 
   &::before,
   &::after {
@@ -66,7 +67,8 @@
 #fxa-toolbar-menu-button,
 #unified-extensions-button,
 #PanelUI-menu-button,
-#alltabs-button {
+#alltabs-button,
+#tabbrowser-arrowscrollbox-periphery {
   display: none;
 }
 
@@ -159,17 +161,56 @@
   }
 }
 
+.scrollbox-clip scrollbox * {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--sidebar-padding);
+}
+
 #tabbrowser-arrowscrollbox {
   position: absolute;
   top: 400px;
-  right: 0;
-  width: calc(var(--sidebar-width) - 1.05rem) !important;
-  border-inline-start: none !important;
-  padding-inline-start: 0 !important;
-  margin-inline-start: 0 !important;
+  right: 0px;
+  width: calc(var(--sidebar-width) - 1rem) !important;
 
   .tabbrowser-tab {
-    height: 3.5rem;
+    height: 200px !important;
+    width: 100% !important;
+    padding: 0px !important;
+    max-width: none !important;
+
+    &:hover .tab-background:not([selected]) {
+      background-color: var(--sidebar-element-background-color) !important;
+    }
+
+    &:not([fadein]) {
+      display: none;
+    }
+  }
+
+  .tab-background {
+    height: 3.5rem !important;
+    margin: 0 !important;
+    border-radius: var(--surface-rounding) !important;
+    transition: background-color 100ms ease-in-out;
+    outline: none !important;
+
+    &[selected] {
+      box-shadow: none !important;
+    }
+  }
+
+  .tab-content {
+    padding: 0 1rem !important;
+  }
+
+  .tab-icon-image {
+    margin-right: 0.6rem !important;
+  }
+
+  .tab-close-button {
+    border-radius: 100% !important;
   }
 }
 
