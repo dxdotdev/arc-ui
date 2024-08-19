@@ -46,7 +46,9 @@
     right: calc(-1 * var(--browser-padding));
   }
 
-  &:not(:has(#urlbar[breakout-extend]:hover)):hover {
+  &:has(#toolbar-menubar[inactive]):not(
+      :has(:is(#urlbar[breakout-extend], #main-menubar):hover)
+    ):hover {
     --sidebar-correction: 0;
     left: calc(var(--browser-padding) / 2);
   }
