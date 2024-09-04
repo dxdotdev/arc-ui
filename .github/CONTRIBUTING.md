@@ -1,12 +1,12 @@
-# Welcome to Arc UI - Theme contributing guide
+# Welcome to Arc UI contributing guide
 
-Thank you for investing your time in contributing to Arc UI - Theme! Any contribution you make will be amazing :sparkles:.
+Thank you for investing your time in contributing to Arc UI! Any contribution you make will be amazing :sparkles:.
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
 ## Setup Local Development Environment
 
-The Arc UI - Theme repo is using [bun](https://bun.sh). Make sure you have the [latest version of bun](https://github.com/oven-sh/bun/releases) installed in your system. To run the development server:
+The Arc UI repo is using [bun](https://bun.sh). Make sure you have the [latest version of bun](https://github.com/oven-sh/bun/releases) installed in your system. To run the development server:
 
 1. Clone this repository
 
@@ -42,4 +42,4 @@ The Arc UI - Theme repo is using [bun](https://bun.sh). Make sure you have the [
 
 ## Thanks :purple_heart:
 
-Thanks for all your contributions and efforts towards improving Arc UI - Theme. We thank you for being part of our :sparkles: community :sparkles:!
+Thanks for all your contributions and efforts towards improving Arc UI. We thank you for being part of our :sparkles: community :sparkles:!

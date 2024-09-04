@@ -1,12 +1,11 @@
 [userChrome.css]: https://www.userchrome.org/
 [Arc Browser]: https://arc.net/
-[Arc UI Addon]: https://github.com/dxdotdev/arc-ui-addon
 
 <div align="center">
-  <img width="128" src="https://raw.githubusercontent.com/dxdotdev/arc-ui/main/.github/assets/arc-ui-default.svg" />
+  <img width="128" src="./.github/assets/arc-ui-default.svg" />
 
-  <h1>Arc UI - Theme</h1>
-  <p>Theme to use with Arc UI extension for Firefox</p>
+  <h1>Arc UI</h1>
+  <p>Make your Firefox like the Arc Browser</p>
 </div>
 
 <div align="center">
@@ -15,13 +14,12 @@
 
 <br />
 
-Arc UI Theme is a custom [userChrome.css] packed with styles to make your browser look and feel like [Arc Browser].
-Install [Arc UI Addon] to a complete experience.
+Arc UI is a custom [userChrome.css] packed with styles to make your browser look and feel like [Arc Browser].
 
 <br />
 
 <div align="right">
-  <img src="https://raw.githubusercontent.com/dxdotdev/arc-ui/main/.github/assets/ui.png" />
+  <img src="./.github/assets/ui.png" />
   Theme: <a href="https://github.com/catppuccin/firefox">Catppuccin Macchiato - Blue</a>
 </div>
 
@@ -34,7 +32,7 @@ To install the userChrome.css, close Firefox and follow the steps below:
   Just run the command
 
   ```bash
-  bash -c "$(curl https://raw.githubusercontent.com/dxdotdev/arc-ui-theme/main/scripts/install.sh)"
+  bash -c "$(curl https://raw.githubusercontent.com/dxdotdev/arc-ui/main/scripts/install.sh)"
   ```
 
 - Windows
