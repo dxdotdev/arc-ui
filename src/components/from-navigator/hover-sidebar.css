@@ -58,7 +58,10 @@
 .titlebar-spacer,
 #customizableui-special-spring1,
 #customizableui-special-spring2,
-#OtherBookmarks {
+#OtherBookmarks,
+#scrollbutton-up,
+#scrollbutton-down,
+spacer {
   display: none;
 }
 
@@ -166,13 +169,60 @@
   flex-direction: column;
   width: 100%;
   gap: var(--sidebar-padding);
+  overflow-y: scroll;
+}
+
+#navigator-toolbox:has(#PersonalToolbar[collapsed="false"]) {
+  &:has(.bookmark-item:nth-last-child(n + 1)) #tabbrowser-arrowscrollbox {
+    --tabs-top-padding: calc(3.5rem + var(--sidebar-padding));
+  }
+
+  &:has(.bookmark-item:nth-last-child(n + 5)) #tabbrowser-arrowscrollbox {
+    --tabs-top-padding: calc(2 * (3.5rem + var(--sidebar-padding)));
+  }
+
+  &:has(.bookmark-item:nth-last-child(n + 9)) #tabbrowser-arrowscrollbox {
+    --tabs-top-padding: calc(3 * (3.5rem + var(--sidebar-padding)));
+  }
+
+  &:has(.bookmark-item:nth-last-child(n + 13)) #tabbrowser-arrowscrollbox {
+    --tabs-top-padding: calc(4 * (3.5rem + var(--sidebar-padding)));
+  }
+
+  &:has(.bookmark-item:nth-last-child(n + 17)) #tabbrowser-arrowscrollbox {
+    --tabs-top-padding: calc(5 * (3.5rem + var(--sidebar-padding)));
+  }
+
+  &:has(.bookmark-item:nth-last-child(n + 21)) #tabbrowser-arrowscrollbox {
+    --tabs-top-padding: calc(6 * (3.5rem + var(--sidebar-padding)));
+  }
 }
 
 #tabbrowser-arrowscrollbox {
+  --tabs-top-padding: 0px;
+
+  &::after {
+    content: "\00a0 \00a0 Home";
+    font-weight: bold;
+    top: calc(var(--tabs-top-padding) + 1.5rem);
+    position: absolute;
+    left: 0px;
+    border-bottom: 1px solid var(--color-stroke);
+    height: 2.5rem !important;
+    width: 100%;
+  }
+
   position: absolute;
-  top: 400px;
+  top: calc(3.5rem + 2 * var(--sidebar-padding)) !important;
   right: 0px;
   width: calc(var(--sidebar-width) - 1rem) !important;
+  max-height: calc(
+    100vh - var(--browser-padding) - 5 * var(--sidebar-padding) - 2rem - 3.5rem -
+      2.5rem
+  );
+  padding-top: calc(
+    1.5rem + 2.5rem + 3 * var(--sidebar-padding)+ var(--tabs-top-padding)
+  ) !important;
 
   .tabbrowser-tab {
     height: 200px !important;
