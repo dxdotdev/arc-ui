@@ -1,16 +1,63 @@
-#navigator-toolbox {
-  &:not(:focus-within) #urlbar,
-  #urlbar-container:not(:has(#urlbar[breakout-extend])) {
-    left: 200%;
+#urlbar-container:not(:has(#urlbar[breakout-extend])) {
+  width: calc(100% - 0.8rem) !important;
+  margin: 0 var(--sidebar-padding) !important;
+  transform: none;
+  top: calc(2 * var(--sidebar-padding) + 2rem);
+  left: 0;
+
+  #urlbar {
+    height: 3.5rem !important;
+    border: none !important;
+    background-color: var(--sidebar-element-background-color) !important;
+    box-shadow: none;
+    transition: background-color 100ms ease-in-out !important;
+
+    &:hover {
+      background-color: var(
+        --sidebar-element-hover-background-color
+      ) !important;
+    }
+  }
+
+  .identity-box-button,
+  #tracking-protection-icon-container {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: auto 0;
+
+    image {
+      margin: auto !important;
+    }
+  }
+
+  .urlbar-go-button {
+    display: none;
+  }
+
+  .urlbar-input-container {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  #identity-box {
+    margin-right: 0.5rem !important;
+  }
+
+  .urlbar-input-box {
+    font-size: 16px !important;
+  }
+
+  #urlbar-input {
+    text-overflow: ellipsis;
   }
 }
 
 #urlbar,
 #urlbar-container,
 #urlbar-input-container {
-  --urlbar-height: 32px !important;
-  --urlbar-toolbar-height: 4rem !important;
-  --urlbar-container-height: 4rem !important;
+  --urlbar-height: 2rem !important;
+  --urlbar-toolbar-height: 3.5rem !important;
+  --urlbar-container-height: 3.5rem !important;
 }
 
 #urlbar {
@@ -31,10 +78,14 @@
 #urlbar-container {
   position: fixed !important;
   z-index: 10;
-  top: 30%;
-  left: 50%;
+  top: 28vh;
+  left: calc(
+    50vw - var(--browser-padding) + var(--sidebar-correction) *
+      (var(--sidebar-width) + var(--browser-padding) / 2) -
+      var(--browser-padding) / 2
+  );
   transform: translateX(-50%);
-  width: clamp(40rem, 40rem + 35vw, 50rem) !important;
+  width: clamp(35rem, 35rem + 35vw, 46rem) !important;
 }
 
 #urlbar-go-button {
@@ -49,7 +100,7 @@
 #urlbar-results {
   display: flex !important;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.2rem;
 }
 
 .urlbarView-body-inner,

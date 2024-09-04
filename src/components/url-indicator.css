@@ -1,4 +1,5 @@
 #statuspanel {
+  max-width: 40% !important;
   margin: 0.5rem !important;
   padding: 0.25rem 1rem !important;
   border: 2px solid var(--color-stroke) !important;

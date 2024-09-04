@@ -7,22 +7,6 @@
   &[sidebarcommand*="sidebar-action"] > #sidebar-header {
     display: none !important;
   }
-
-  /* TODO: add sidebar open on hover; */
-  /* &[hidden="true"] { */
-  /* display: block !important; */
-  /* height: calc(100% - var(--browser-padding)); */
-  /* position: absolute; */
-  /* top: calc(var(--browser-padding) / 2) !important; */
-  /* left: calc(var(--browser-padding) / 2) !important; */
-  /* z-index: 10; */
-  /* transform: translateX(-99%); */
-  /* transition: transform 200ms ease-in-out; */
-
-  /* &:hover { */
-  /* transform: translateX(0); */
-  /* } */
-  /* } */
 }
 
 #sidebar-header {

@@ -1,40 +1,30 @@
-#titlebar {
-  position: fixed !important;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: var(--browser-padding);
-
-  & > *,
-  .titlebar-buttonbox {
-    display: none;
-  }
-}
-
-#toolbar-menubar {
-  display: block;
-
-  &:not([inactive]) #menubar-items {
-    position: absolute;
-  }
+#toolbar-menubar:not([inactive]) #menubar-items {
+  left: calc(
+    0.5rem + var(--sidebar-correction) *
+      (var(--sidebar-width) + var(--browser-padding) / 2)
+  );
 }
 
 #menubar-items {
-  z-index: 10;
-  top: calc(var(--browser-padding) + 0.5rem);
-  left: calc(var(--browser-padding) + 0.5rem);
+  position: absolute;
+  top: 0.5rem;
+  left: 200vw;
+  z-index: 30;
 }
 
 #main-menubar {
-  overflow: hidden;
   display: flex !important;
+  overflow: hidden;
   border: 2px solid var(--color-stroke) !important;
   border-radius: var(--surface-rounding) !important;
   background-image: none !important;
   background-color: var(--color-surface) !important;
   box-shadow: var(--surface-shadow);
   transition: background-color 100ms ease-in-out;
+
+  &:focus-within {
+    background-color: red !important;
+  }
 
   menu {
     padding: 0.5rem 1rem !important;
