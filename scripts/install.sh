@@ -1,10 +1,12 @@
 user=$(grep 'Path' ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
 
-userPreferences=~/.mozilla/firefox/$user/prefs.js
+userSettings=~/.mozilla/firefox/$user/user.js
 userChromeCSSPath=~/.mozilla/firefox/$user/chrome/userChrome.css
 
 curl -L https://github.com/dxdotdev/arc-ui-theme/releases/latest/download/userChrome.css >"$userChromeCSSPath"
 
-if (! grep 'toolkit.legacyUserProfileCustomizations.stylesheets' "$userPreferences"); then
-	echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >>"$userPreferences"
+if [ ! -e "$userSettings" ] || (! grep 'toolkit.legacyUserProfileCustomizations.stylesheets' "$userSettings"); then
+	echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >>"$userSettings"
 fi
+
+echo "userChrome.css installed!"
