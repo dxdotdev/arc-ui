@@ -29,11 +29,13 @@ To install the userChrome.css, close Firefox and follow the steps below:
 
 - Linux
 
-  Just run the command
+  Just run the command:
 
   ```bash
   bash -c "$(curl https://raw.githubusercontent.com/dxdotdev/arc-ui/main/scripts/install.sh)"
   ```
+
+  And restart your Firefox.
 
 - Windows
 
