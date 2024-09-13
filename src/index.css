@@ -1,21 +1,17 @@
+@import "./variables.css";
 @import "./components/index.css";
 
 :root {
-  --browser-padding: 0.5rem;
-  --surface-rounding: 1rem;
-  --surface-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-
-  --color-surface: var(--toolbar-bgcolor);
-  --color-surface-highlight: var(--urlbarView-hover-background);
-  /* TODO: make highlight color matches the theme */
-  /* --color-surface-highlight: var( */
-  /* --lwt-accent-color, */
-  /* var(--urlbarView-hover-background) */
-  /* ); */
-  --color-stroke: var(--urlbarView-hover-background);
-  --color-text: var(--lwt-text-color, var(--toolbar-color));
-
   font-size: 16px !important;
+
+  &[inFullscreen] {
+    --browser-padding: 0px;
+
+    & #appcontent {
+      border: none;
+      border-radius: 0px;
+    }
+  }
 }
 
 #browser {
@@ -28,14 +24,4 @@
   border-radius: var(--surface-rounding);
   border: 1px solid var(--color-surface);
   box-shadow: var(--surface-shadow);
-}
-
-:root[inFullscreen] {
-  & #browser {
-    padding: 0;
-  }
-
-  & #appcontent {
-    border: 0;
-  }
 }

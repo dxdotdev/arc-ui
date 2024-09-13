@@ -1,0 +1,10 @@
+:root {
+  --browser-padding: 0.5rem;
+  --surface-rounding: 1rem;
+  --surface-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+
+  --color-surface: var(--toolbar-bgcolor);
+  --color-surface-highlight: var(--urlbarView-hover-background);
+  --color-stroke: var(--urlbarView-hover-background);
+  --color-text: var(--lwt-text-color, var(--toolbar-color));
+}
