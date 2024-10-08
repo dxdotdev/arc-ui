@@ -1,4 +1,4 @@
-user=$(grep 'Path' ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
+user=$(grep --max-count 1 'Path=' ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
 
 userSettings=~/.mozilla/firefox/$user/user.js
 userChromeCSSPath=~/.mozilla/firefox/$user/chrome/userChrome.css
