@@ -164,7 +164,7 @@ spacer {
   }
 }
 
-scrollbox[part="scrollbox"] * {
+scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"] > * {
   flex-direction: column !important;
   gap: var(--sidebar-padding) !important;
   overflow-y: scroll;
