@@ -164,11 +164,9 @@ spacer {
   }
 }
 
-.scrollbox-clip scrollbox * {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: var(--sidebar-padding);
+scrollbox[part="scrollbox"] * {
+  flex-direction: column !important;
+  gap: var(--sidebar-padding) !important;
   overflow-y: scroll;
 }
 
