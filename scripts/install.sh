@@ -1,4 +1,21 @@
-user=$(grep --max-count 1 'Path=' ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
+#!/bin/bash
+echo "Available profiles:"
+
+profiles=($(grep 'Name=' ~/.mozilla/firefox/profiles.ini | sed 's/Name=//g'))
+
+for i in "${!profiles[@]}"; do
+    echo "$(($i + 1))=${profiles[$i]}"
+done
+
+echo "Specify which profile you want the theme to apply to (enter the number):" 
+read choice
+
+selected_profile=${profiles[$((choice - 1))]}
+
+echo "You selected: $selected_profile"
+user=$(grep --max-count 1 "Path=.*$selected_profile" ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
+
+echo "Profile path: $user"
 
 userSettings=~/.mozilla/firefox/$user/user.js
 userChromeCSSPath=~/.mozilla/firefox/$user/chrome/userChrome.css
@@ -13,3 +30,4 @@ if [ ! -e "$userSettings" ] || (! grep 'toolkit.legacyUserProfileCustomizations.
 fi
 
 echo "userChrome.css installed!"
+
