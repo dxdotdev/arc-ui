@@ -1,9 +1,8 @@
 #urlbar-container:not(:has(#urlbar[breakout-extend])) {
   width: calc(100% - 0.8rem) !important;
-  margin: 0 var(--sidebar-padding) !important;
   transform: none;
-  top: calc(2 * var(--sidebar-padding) + 2rem);
-  left: 0;
+  top: calc(2 * var(--sidebar-padding) + var(--xxl));
+  left: 0px;
 
   #urlbar {
     height: 3.5rem !important;
@@ -13,9 +12,7 @@
     transition: background-color 100ms ease-in-out !important;
 
     &:hover {
-      background-color: var(
-        --sidebar-element-hover-background-color
-      ) !important;
+      background-color: var(--sidebar-element-hover-background-color) !important;
     }
   }
 
@@ -62,16 +59,16 @@
 
 #urlbar {
   transition: none !important;
-  border: 2px solid var(--color-stroke) !important;
-  border-radius: var(--surface-rounding) !important;
-  background-color: var(--color-surface) !important;
-  box-shadow: var(--surface-shadow);
+  border: 2px solid var(--neutral) !important;
+  border-radius: var(--lg) !important;
+  background-color: var(--base-100) !important;
+  box-shadow: var(--shadow);
   padding: 0.2rem !important;
 }
 
 #urlbar-background {
   border: none !important;
-  border-radius: calc(var(--surface-rounding) - 2px) !important;
+  border-radius: calc(var(--lg) - 2px) !important;
   background-color: transparent !important;
 }
 
@@ -80,9 +77,12 @@
   z-index: 10;
   top: 28vh;
   left: calc(
-    50vw - var(--browser-padding) + var(--sidebar-correction) *
-      (var(--sidebar-width) + var(--browser-padding) / 2) -
-      var(--browser-padding) / 2
+    50vw -
+    var(--content-padding) +
+    var(--sidebar-correction) *
+    (var(--sidebar-width) + var(--content-padding) / 2) -
+    var(--content-padding) /
+    2
   );
   transform: translateX(-50%);
   width: clamp(35rem, 35rem + 35vw, 46rem) !important;
@@ -109,23 +109,23 @@
 }
 
 .urlbarView-body-outer {
-  border-top: 2px solid var(--color-stroke);
-  border-bottom: 2px solid var(--color-stroke);
+  border-top: 2px solid var(--neutral);
+  border-bottom: 2px solid var(--neutral);
 }
 
 .urlbarView-row {
   height: 3.5rem !important;
   transition: background-color 100ms ease-in-out;
-  border-radius: var(--surface-rounding) !important;
+  border-radius: var(--lg) !important;
 
   &[selected],
   &:hover {
-    background-color: var(--color-surface-highlight) !important;
+    background-color: var(--base-100-highlight) !important;
   }
 }
 
 .searchbar-engine-one-off-item[selected] {
-  background-color: var(--color-surface-highlight) !important;
+  background-color: var(--base-100-highlight) !important;
 }
 
 .search-one-offs {

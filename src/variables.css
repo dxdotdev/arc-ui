@@ -1,10 +1,35 @@
 :root {
-  --browser-padding: 0.5rem;
-  --surface-rounding: 1rem;
-  --surface-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  /* sizing and spacing (reference liftkit) */
+  --xs: .129rem;
+  --sm: .272rem;
+  --md: .618rem;
+  --lg: 1rem;
+  --xl: 1.618rem;
+  --xxl: 2.618rem;
 
-  --color-surface: var(--toolbar-bgcolor);
-  --color-surface-highlight: var(--urlbarView-hover-background);
-  --color-stroke: var(--urlbarView-hover-background);
-  --color-text: var(--lwt-text-color, var(--toolbar-color));
+  /* colors (reference daisy ui) */
+  /* --primary: ; */
+  /* --primary-content: ; */
+  /* --secondary: ; */
+  /* --secondary-content: ; */
+  /* --accent: ; */
+  /* --accent-content: ; */
+  --neutral: hsl(from var(--base-100) h s calc(l + 5));
+  /* --neutral-content: ; */
+  --base-100: var(--toolbar-bgcolor);
+  --base-200: hsl(from var(--base-100) h s calc(l - 5));
+  --base-300: hsl(from var(--base-200) h s calc(l - 5));
+  --base-content: var(--toolbar-color);
+  /* --info: ; */
+  /* --info-content: ; */
+  /* --success: ; */
+  /* --success-content: ; */
+  /* --warning: ; */
+  /* --warning-content: ; */
+  /* --error: ; */
+  /* --error-content: ; */
+
+  /* other */
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  --transition: 100ms ease-in-out;
 }

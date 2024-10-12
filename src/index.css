@@ -2,10 +2,12 @@
 @import "./components/index.css";
 
 :root {
+  --content-padding: var(--md);
+
   font-size: 16px !important;
 
   &[inFullscreen] {
-    --browser-padding: 0px;
+    --content-padding: 0px;
 
     & #appcontent {
       border: none;
@@ -15,13 +17,13 @@
 }
 
 #browser {
-  padding: var(--browser-padding);
-  background-color: var(--color-surface) !important;
+  padding: var(--content-padding);
+  background-color: var(--base-100) !important;
 }
 
 #appcontent {
   overflow: hidden;
-  border-radius: var(--surface-rounding);
-  border: 1px solid var(--color-surface);
-  box-shadow: var(--surface-shadow);
+  border-radius: var(--lg);
+  border: 1px solid var(--base-200);
+  box-shadow: var(--shadow);
 }

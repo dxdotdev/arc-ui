@@ -1,8 +1,8 @@
 #sidebar-box {
   overflow: hidden;
-  border: 2px solid var(--color-stroke) !important;
-  border-radius: var(--surface-rounding) !important;
-  box-shadow: var(--surface-shadow);
+  border: 2px solid var(--neutral) !important;
+  border-radius: var(--lg) !important;
+  box-shadow: var(--shadow);
 
   &[sidebarcommand*="sidebar-action"] > #sidebar-header {
     display: none !important;
@@ -14,11 +14,11 @@
 }
 
 :is(#sidebar-switcher-target, #sidebar-close):hover {
-  background-color: var(--color-surface-highlight) !important;
+  background-color: var(--neutral) !important;
 }
 
 #sidebar-splitter {
-  width: calc(var(--browser-padding) / 2) !important;
+  width: calc(var(--content-padding) / 2) !important;
   background-color: transparent !important;
   border: none !important;
 }

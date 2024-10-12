@@ -1,13 +1,14 @@
 #toolbar-menubar:not([inactive]) #menubar-items {
   left: calc(
-    0.5rem + var(--sidebar-correction) *
-      (var(--sidebar-width) + var(--browser-padding) / 2)
+    var(--md) +
+    var(--sidebar-correction) *
+    (var(--sidebar-width) + var(--content-padding) / 2)
   );
 }
 
 #menubar-items {
   position: absolute;
-  top: 0.5rem;
+  top: var(--md);
   left: 200vw;
   z-index: 30;
 }
@@ -15,24 +16,20 @@
 #main-menubar {
   display: flex !important;
   overflow: hidden;
-  border: 2px solid var(--color-stroke) !important;
-  border-radius: var(--surface-rounding) !important;
+  border: 2px solid var(--neutral) !important;
+  border-radius: var(--lg) !important;
   background-image: none !important;
-  background-color: var(--color-surface) !important;
-  box-shadow: var(--surface-shadow);
-  transition: background-color 100ms ease-in-out;
-
-  &:focus-within {
-    background-color: red !important;
-  }
+  background-color: var(--base-100) !important;
+  box-shadow: var(--shadow);
+  transition: background-color var(--transition);
 
   menu {
-    padding: 0.5rem 1rem !important;
+    padding: var(--md) var(--lg) !important;
     border: none !important;
 
     &:hover,
     &[open] {
-      background-color: var(--color-surface-highlight) !important;
+      background-color: var(--neutral) !important;
     }
   }
 }
