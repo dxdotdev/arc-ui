@@ -1,14 +1,14 @@
 #!/bin/bash
 echo "Available profiles:"
 
-profiles=($(grep 'Name=' ~/.mozilla/firefox/profiles.ini | sed 's/Name=//g'))
+profiles=$(grep 'Name=' ~/.mozilla/firefox/profiles.ini | sed 's/Name=//g')
 
 for i in "${!profiles[@]}"; do
-    echo "$(($i + 1))=${profiles[$i]}"
+	echo "$((i + 1))=${profiles[$i]}"
 done
 
-echo "Specify which profile you want the theme to apply to (enter the number):" 
-read choice
+echo "Specify which profile you want the theme to apply to (enter the number):"
+read -r choice
 
 selected_profile=${profiles[$((choice - 1))]}
 
@@ -29,5 +29,8 @@ if [ ! -e "$userSettings" ] || (! grep 'toolkit.legacyUserProfileCustomizations.
 	echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >>"$userSettings"
 fi
 
-echo "userChrome.css installed!"
+if [ ! -e "$userSettings" ] || (! grep 'browser.urlbar.maxRichResults' "$userSettings"); then
+	echo 'user_pref("browser.urlbar.maxRichResults", true);' >>"$userSettings"
+fi
 
+echo "userChrome.css installed!"
