@@ -1,8 +1,8 @@
 :root {
   /* sizing and spacing (reference liftkit) */
-  --xs: .129rem;
-  --sm: .272rem;
-  --md: .618rem;
+  --xs: 0.129rem;
+  --sm: 0.272rem;
+  --md: 0.618rem;
   --lg: 1rem;
   --xl: 1.618rem;
   --xxl: 2.618rem;

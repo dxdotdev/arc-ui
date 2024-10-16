@@ -3,16 +3,15 @@
 
 :root {
   --content-padding: var(--md);
+  --content-border: 1px solid var(--base-200);
+  --content-border-radius: var(--lg);
 
   font-size: 16px !important;
 
   &[inFullscreen] {
     --content-padding: 0px;
-
-    & #appcontent {
-      border: none;
-      border-radius: 0px;
-    }
+    --content-border: none;
+    --content-border-radius: 0px;
   }
 }
 
@@ -23,7 +22,7 @@
 
 #appcontent {
   overflow: hidden;
-  border-radius: var(--lg);
-  border: 1px solid var(--base-200);
+  border-radius: var(--content-border-radius);
+  border: var(--content-border);
   box-shadow: var(--shadow);
 }
