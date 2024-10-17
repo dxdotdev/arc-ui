@@ -1,5 +1,8 @@
-user=$(grep 'Path' ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
+profiles=$(grep 'Name=' ~/.mozilla/firefox/profiles.ini | sed 's/Name=//g')
 
-userChromeCSSPath=~/.mozilla/firefox/$user/chrome/userChrome.css
+for i in "${!profiles[@]}"; do
+	user=$(grep --max-count 1 "Path=.*${profiles[$i]}" ~/.mozilla/firefox/profiles.ini | sed 's/Path=//g')
+	userChromeCSSPath=~/.mozilla/firefox/$user/chrome/userChrome.css
 
-rm -rf "$userChromeCSSPath"
+	rm -f "$userChromeCSSPath"
+done
