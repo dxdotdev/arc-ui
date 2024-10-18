@@ -36,7 +36,7 @@
   border-radius: var(--md) !important;
 }
 
-#urlbar-go-button {
+.urlbar-icon {
   margin: auto 0;
 }
 

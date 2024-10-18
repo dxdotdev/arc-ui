@@ -1,0 +1,37 @@
+#PersonalToolbar {
+  padding: 0 !important;
+  max-height: none !important;
+  background-color: transparent !important;
+}
+
+#PlacesToolbarItems {
+  display: block !important;
+  columns: 3 var(--urlbar-container-height);
+  column-fill: balance;
+  gap: var(--sidebar-padding);
+  padding-top: calc(2 * var(--sidebar-padding) + var(--urlbar-container-height));
+
+  .bookmark-item {
+    visibility: visible !important;
+    min-height: var(--urlbar-container-height);
+    margin: 0 0 var(--sidebar-padding) 0 !important;
+    padding: var(--sm) !important;
+    border-radius: var(--lg) !important;
+    background-color: var(--base-100) !important;
+    transition: background-color var(--transition);
+
+    &:hover {
+      background-color: var(--neutral) !important;
+    }
+
+    .toolbarbutton-icon {
+      width: calc(2 * var(--md)) !important;
+      height: calc(2 * var(--md)) !important;
+      margin-inline-end: 0 !important;
+    }
+
+    .toolbarbutton-text {
+      display: none !important;
+    }
+  }
+}

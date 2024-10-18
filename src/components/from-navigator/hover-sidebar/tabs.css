@@ -1,0 +1,88 @@
+#navigator-toolbox {
+  &:has(#PersonalToolbar[collapsed="true"]),
+  &:has(#PlacesToolbarItems:empty) {
+    #tabbrowser-arrowscrollbox {
+      --_bookmarks-height: 0px;
+    }
+  }
+
+  &:has(.bookmark-item) #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: var(--urlbar-container-height);
+  }
+}
+
+scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
+  > * {
+  flex-direction: column !important;
+  gap: var(--sidebar-padding) !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#tabbrowser-arrowscrollbox {
+  position: absolute;
+  top: calc(
+    var(--urlbar-container-height) +
+    3 *
+    var(--sidebar-padding) +
+    var(--_bookmarks-height)
+  ) !important;
+  right: 0px;
+  width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
+  max-height: calc(
+    100vh -
+    4px -
+    var(--content-padding) -
+    6 *
+    var(--sidebar-padding) -
+    3 *
+    var(--urlbar-container-height) -
+    var(--_bookmarks-height)
+  ) !important;
+}
+
+.tabbrowser-tab {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0px !important;
+
+  &:not([fadein]) {
+    display: none;
+  }
+}
+
+#tabbrowser-tabs[haspinnedtabs]
+  .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden]))
+  .tab-stack {
+  padding-top: var(--sidebar-padding);
+  margin-top: var(--sidebar-padding);
+  border-top: 2px solid var(--base-100);
+}
+
+.tab-background {
+  height: var(--urlbar-container-height) !important;
+  margin: 0 !important;
+  border-radius: var(--lg) !important;
+  transition: background-color var(--transition);
+  outline: none !important;
+
+  &[selected] {
+    background-color: var(--neutral) !important;
+    box-shadow: none !important;
+  }
+}
+
+.tab-content {
+  padding: 0 var(--lg) !important;
+  gap: var(--sm);
+
+  &:hover .tab-close-button {
+    opacity: 1;
+  }
+}
+
+.tab-close-button {
+  opacity: 0;
+  border-radius: 100% !important;
+  transition: background-color var(--transition);
+}
