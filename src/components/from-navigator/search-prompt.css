@@ -1,60 +1,17 @@
-#urlbar-container:not(:has(#urlbar[breakout-extend])) {
-  width: calc(100% - 0.8rem) !important;
-  transform: none;
-  top: calc(2 * var(--sidebar-padding) + var(--xxl));
-  left: 0px;
-
-  #urlbar {
-    height: 3.5rem !important;
-    border: none !important;
-    background-color: var(--sidebar-element-background-color) !important;
-    box-shadow: none;
-    transition: background-color 100ms ease-in-out !important;
-
-    &:hover {
-      background-color: var(--sidebar-element-hover-background-color) !important;
-    }
-  }
-
-  .identity-box-button,
-  #tracking-protection-icon-container {
-    width: 1.8rem;
-    height: 1.8rem;
-    margin: auto 0;
-
-    image {
-      margin: auto !important;
-    }
-  }
-
-  .urlbar-go-button {
-    display: none;
-  }
-
-  .urlbar-input-container {
-    padding: 0 !important;
-    border: none !important;
-  }
-
-  #identity-box {
-    margin-right: 0.5rem !important;
-  }
-
-  .urlbar-input-box {
-    font-size: 16px !important;
-  }
-
-  #urlbar-input {
-    text-overflow: ellipsis;
-  }
-}
-
-#urlbar,
-#urlbar-container,
-#urlbar-input-container {
-  --urlbar-height: 2rem !important;
-  --urlbar-toolbar-height: 3.5rem !important;
-  --urlbar-container-height: 3.5rem !important;
+#urlbar-container {
+  position: fixed !important;
+  z-index: 10;
+  top: 28vh;
+  left: calc(
+    50vw -
+    var(--content-padding) +
+    var(--sidebar-correction) *
+    (var(--sidebar-width) + var(--content-padding) / 2) -
+    var(--content-padding) /
+    2
+  );
+  transform: translateX(-50%);
+  width: clamp(35rem, 35rem + 35vw, 46rem) !important;
 }
 
 #urlbar {
@@ -72,20 +29,11 @@
   background-color: transparent !important;
 }
 
-#urlbar-container {
-  position: fixed !important;
-  z-index: 10;
-  top: 28vh;
-  left: calc(
-    50vw -
-    var(--content-padding) +
-    var(--sidebar-correction) *
-    (var(--sidebar-width) + var(--content-padding) / 2) -
-    var(--content-padding) /
-    2
-  );
-  transform: translateX(-50%);
-  width: clamp(35rem, 35rem + 35vw, 46rem) !important;
+#urlbar-search-mode-indicator {
+  height: var(--xl);
+  margin: auto 0;
+  background-color: var(--neutral) !important;
+  border-radius: var(--md) !important;
 }
 
 #urlbar-go-button {

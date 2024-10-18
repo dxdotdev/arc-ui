@@ -1,0 +1,51 @@
+#titlebar {
+  height: var(--xxl) !important;
+}
+
+#nav-bar {
+  --toolbar-bgcolor: transparent;
+
+  position: absolute !important;
+  inset: var(--sidebar-padding) var(--sidebar-padding) auto auto;
+  height: var(--xxl) !important;
+  border: none !important;
+}
+
+.toolbarbutton-1 image {
+  border-radius: var(--md) !important;
+  transition: background-color var(--transition);
+
+  &:hover {
+    background-color: var(--neutral) !important;
+  }
+}
+
+.titlebar-buttonbox-container {
+  position: absolute;
+  inset: var(--sidebar-padding) auto auto var(--sidebar-padding);
+  height: var(--xxl) !important;
+}
+
+.titlebar-button {
+  padding: var(--sm) !important;
+
+  image {
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+    background-color: var(--neutral) !important;
+    background-image: none !important;
+    transition: background-color var(--transition);
+  }
+
+  &.titlebar-close:hover image {
+    background-color: var(--error) !important;
+  }
+
+  &.titlebar-min:hover image {
+    background-color: var(--warning) !important;
+  }
+
+  &:where(.titlebar-max, .titlebar-restore):hover image {
+    background-color: var(--success) !important;
+  }
+}

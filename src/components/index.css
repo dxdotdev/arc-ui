@@ -1,5 +1,5 @@
 @import "./from-navigator/search-prompt.css";
-@import "./from-navigator/hover-sidebar.css";
+@import "./from-navigator/hover-sidebar/index.css";
 @import "./from-navigator/alt-menu.css";
 @import "./from-navigator/screenshot-panel.css";
 @import "./url-indicator.css";

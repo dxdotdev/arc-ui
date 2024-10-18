@@ -22,11 +22,11 @@
   --base-content: var(--toolbar-color);
   /* --info: ; */
   /* --info-content: ; */
-  /* --success: ; */
+  --success: #4ade80;
   /* --success-content: ; */
-  /* --warning: ; */
+  --warning: #fcd34d;
   /* --warning-content: ; */
-  /* --error: ; */
+  --error: #f87171;
   /* --error-content: ; */
 
   /* other */

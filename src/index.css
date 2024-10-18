@@ -6,6 +6,9 @@
   --content-border: 1px solid var(--base-200);
   --content-border-radius: var(--lg);
 
+  --sidebar-width: 300px;
+  --sidebar-padding: var(--sm);
+
   font-size: 16px !important;
 
   &[inFullscreen] {
