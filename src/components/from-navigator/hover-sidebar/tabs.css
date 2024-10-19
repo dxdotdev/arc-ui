@@ -1,15 +1,18 @@
-/* #navigator-toolbox { */
-/* &:has(#PersonalToolbar[collapsed="true"]), */
-/* &:has(#PlacesToolbarItems:empty) { */
-/* #tabbrowser-arrowscrollbox { */
-/* --_bookmarks-height: 0px; */
-/* } */
-/* } */
+#navigator-toolbox {
+  &:has(#PersonalToolbar[collapsed="true"]),
+  &:has(#PlacesToolbarItems:empty) {
+    #tabbrowser-arrowscrollbox {
+      --_bookmarks-height: 0px;
+    }
+  }
 
-/* &:has(.bookmark-item) #tabbrowser-arrowscrollbox { */
-/* --_bookmarks-height: var(--urlbar-container-height); */
-/* } */
-/* } */
+  &:has(.bookmark-item) #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: calc(
+      var(--urlbar-container-height) +
+      var(--sidebar-padding)
+    );
+  }
+}
 
 scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   > * {
@@ -27,7 +30,12 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
 
 #tabbrowser-arrowscrollbox {
   position: absolute;
-  top: calc(var(--urlbar-container-height) + 2 * var(--sidebar-padding)) !important;
+  top: calc(
+    var(--urlbar-container-height) +
+    2 *
+    var(--sidebar-padding) +
+    var(--_bookmarks-height)
+  ) !important;
   left: 0px;
   width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
   max-height: calc(
@@ -58,10 +66,9 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
 }
 
 #tabbrowser-tabs[haspinnedtabs]
-  .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden]))
+  .tabbrowser-tab:nth-child(1 of [fadein]:not([pinned], [hidden]))
   .tab-stack {
   padding-top: var(--sidebar-padding);
-  margin-top: var(--sidebar-padding);
   border-top: 2px solid var(--base-100);
 }
 
@@ -81,6 +88,10 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
 .tab-content {
   padding: 0 var(--lg) !important;
   gap: var(--sm);
+
+  .tab-icon-image {
+    margin-inline-end: 5.5px;
+  }
 
   &:hover .tab-close-button {
     opacity: 1;
