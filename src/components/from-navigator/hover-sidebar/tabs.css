@@ -1,15 +1,48 @@
-#navigator-toolbox {
-  &:has(#PersonalToolbar[collapsed="true"]),
-  &:has(#PlacesToolbarItems:empty) {
-    #tabbrowser-arrowscrollbox {
-      --_bookmarks-height: 0px;
-    }
-  }
-
-  &:has(.bookmark-item) #tabbrowser-arrowscrollbox {
+#navigator-toolbox:not(:has(#PersonalToolbar[collapsed="true"])) {
+  &:has(#PlacesToolbarItems > .bookmark-item) #tabbrowser-arrowscrollbox {
     --_bookmarks-height: calc(
       var(--urlbar-container-height) +
       var(--sidebar-padding)
+    );
+  }
+
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(5))
+    #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: calc(
+      2 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
+
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(9))
+    #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: calc(
+      3 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
+
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(13))
+    #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: calc(
+      4 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
+
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(17))
+    #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: calc(
+      5 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
+
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(25))
+    #tabbrowser-arrowscrollbox {
+    --_bookmarks-height: calc(
+      6 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
     );
   }
 }
@@ -29,6 +62,8 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
 }
 
 #tabbrowser-arrowscrollbox {
+  --_bookmarks-height: 0px;
+
   position: absolute;
   top: calc(
     var(--urlbar-container-height) +
@@ -40,10 +75,7 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
   max-height: calc(
     100vh -
-    4px -
     var(--content-padding) -
-    6 *
-    var(--sidebar-padding) -
     3 *
     var(--urlbar-container-height) -
     var(--_bookmarks-height)

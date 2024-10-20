@@ -2,19 +2,39 @@
   padding: 0 !important;
   max-height: none !important;
   background-color: transparent !important;
+
+  &[collapsed="true"] {
+    display: none;
+  }
+}
+
+#PlacesChevron,
+#personal-toolbar-empty-description {
+  display: none;
 }
 
 #PlacesToolbarItems {
-  display: block !important;
-  columns: 3 var(--urlbar-container-height);
-  column-fill: balance;
+  display: grid !important;
   gap: var(--sidebar-padding);
   padding-top: calc(2 * var(--sidebar-padding) + var(--urlbar-container-height));
 
+  &:has(.bookmark-item:nth-child(2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &:has(.bookmark-item:nth-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &:has(.bookmark-item:nth-child(4)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .bookmark-item {
+    max-width: none !important;
     visibility: visible !important;
     min-height: var(--urlbar-container-height);
-    margin: 0 0 var(--sidebar-padding) 0 !important;
+    margin: 0 !important;
     padding: var(--sm) !important;
     border-radius: var(--lg) !important;
     background-color: var(--base-100) !important;
