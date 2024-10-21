@@ -1,5 +1,5 @@
 #navigator-toolbox {
-  --_btn-size: 36px;
+  --_btn-size: 32px;
 }
 
 #alltabs-button {
@@ -12,8 +12,8 @@
 #unified-extensions-button,
 #fxa-toolbar-menu-button {
   position: fixed;
-  bottom: var(--sidebar-padding);
   display: block !important;
+  bottom: var(--sidebar-padding);
 }
 
 #firefox-view-button {
@@ -25,13 +25,12 @@
 }
 
 #save-to-pocket-button,
-#unified-extensions-button {
-  transform: translateX(-50%);
-
-  image {
-    width: var(--_btn-size) !important;
-    height: var(--_btn-size) !important;
-  }
+#unified-extensions-button,
+#fxa-toolbar-menu-button {
+  bottom: calc(var(--sidebar-padding) + 36px / 2);
+  width: var(--_btn-size) !important;
+  height: var(--_btn-size) !important;
+  transform: translate(-50%, +50%);
 }
 
 #save-to-pocket-button {
@@ -43,26 +42,13 @@
 }
 
 #fxa-toolbar-menu-button {
-  width: var(--_btn-size);
-  height: var(--_btn-size);
-}
-
-#fxa-toolbar-menu-button {
   left: 50%;
-  width: var(--_btn-size) !important;
-  height: var(--_btn-size) !important;
-  transform: translateX(-50%);
 
   .toolbarbutton-badge-stack {
     width: var(--_btn-size) !important;
     height: var(--_btn-size) !important;
     border-radius: var(--md) !important;
     transition: background-color var(--transition);
-  }
-
-  #fxa-avatar-image {
-    width: 20px !important;
-    height: 20px !important;
   }
 
   &:hover .toolbarbutton-badge-stack {

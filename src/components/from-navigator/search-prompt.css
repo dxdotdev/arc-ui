@@ -4,11 +4,10 @@
   top: 28vh;
   left: calc(
     50vw -
+    2px -
     var(--content-padding) +
     var(--sidebar-correction) *
-    (var(--sidebar-width) + var(--content-padding) / 2) -
-    var(--content-padding) /
-    2
+    (var(--sidebar-width) + var(--content-padding) / 2)
   );
   transform: translateX(-50%);
   width: clamp(35rem, 35rem + 35vw, 46rem) !important;
