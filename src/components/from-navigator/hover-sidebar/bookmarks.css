@@ -1,3 +1,9 @@
+#OtherBookmarks,
+#PlacesChevron,
+#personal-toolbar-empty-description {
+  display: none;
+}
+
 #PersonalToolbar {
   padding: 0 !important;
   max-height: none !important;
@@ -6,11 +12,6 @@
   &[collapsed="true"] {
     display: none;
   }
-}
-
-#PlacesChevron,
-#personal-toolbar-empty-description {
-  display: none;
 }
 
 #PlacesToolbarItems {

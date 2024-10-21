@@ -11,15 +11,6 @@
   border: none !important;
 }
 
-.toolbarbutton-1 image {
-  border-radius: var(--md) !important;
-  transition: background-color var(--transition);
-
-  &:hover {
-    background-color: var(--neutral) !important;
-  }
-}
-
 .titlebar-buttonbox-container {
   position: absolute;
   inset: var(--sidebar-padding) auto auto var(--sidebar-padding);
@@ -47,5 +38,21 @@
 
   &:where(.titlebar-max, .titlebar-restore):hover image {
     background-color: var(--success) !important;
+  }
+}
+
+#PanelUI-menu-button,
+#downloads-button {
+  .toolbarbutton-badge-stack {
+    border-radius: var(--md) !important;
+    transition: background-color var(--transition);
+  }
+
+  &:hover .toolbarbutton-badge-stack {
+    background-color: var(--base-100) !important;
+  }
+
+  &[open] .toolbarbutton-badge-stack {
+    background-color: var(--neutral) !important;
   }
 }

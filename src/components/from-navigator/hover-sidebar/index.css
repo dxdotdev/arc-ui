@@ -1,7 +1,8 @@
-@import "./browser-controls.css";
+@import "./top.css";
 @import "./search-input.css";
 @import "./bookmarks.css";
 @import "./tabs.css";
+@import "./bottom.css";
 
 @property --sidebar-correction {
   syntax: "<number>";
@@ -46,52 +47,17 @@
     right: calc(-1 * var(--content-padding));
   }
 
-  /* &:has(#toolbar-menubar[inactive]):not( / */
-  /* :has(:is(#urlbar[breakout-extend], #main-menubar):hover) */
-  /* ):hover { */
-  /* --sidebar-correction: 0; */
-  left: calc(var(--content-padding) / 2);
-  /* } */
+  &:has(#toolbar-menubar[inactive]):not(:has(:is(#urlbar[breakout-extend], #main-menubar):hover)):hover {
+    --sidebar-correction: 0;
+    left: calc(var(--content-padding) / 2);
+  }
 }
 
 .titlebar-spacer,
 #customizableui-special-spring1,
 #customizableui-special-spring2,
-#OtherBookmarks,
 #scrollbutton-up,
 #scrollbutton-down,
 spacer {
   display: none;
-}
-
-/* TODO: temporary */
-#save-to-pocket-button,
-#fxa-toolbar-menu-button,
-#unified-extensions-button,
-#PanelUI-menu-button,
-#alltabs-button,
-#tabbrowser-arrowscrollbox-periphery {
-  display: none;
-}
-
-
-#firefox-view-button {
-  position: absolute;
-  bottom: var(--sidebar-padding);
-  left: var(--sidebar-padding);
-
-  image {
-    transition: background-color 100ms ease-in-out;
-  }
-}
-
-#new-tab-button {
-  display: block !important;
-  position: absolute;
-  bottom: var(--sidebar-padding);
-  right: var(--sidebar-padding);
-
-  image {
-    transition: background-color 100ms ease-in-out;
-  }
 }

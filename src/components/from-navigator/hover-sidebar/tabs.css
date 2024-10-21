@@ -61,13 +61,42 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   margin-inline: 0px !important;
 }
 
+#tabs-newtab-button {
+  position: absolute;
+  top: calc(-1 * (var(--sidebar-padding) + var(--urlbar-container-height))) !important;
+  width: 100% !important;
+  height: var(--urlbar-container-height) !important;
+  border-radius: var(--lg) !important;
+
+  &:hover {
+    background-color: var(--base-100) !important;
+  }
+
+  .toolbarbutton-icon {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    margin-top: -1px;
+    margin-left: -180px;
+    opacity: 70%;
+    transition: none !important;
+  }
+
+  &::after {
+    content: "New Tab";
+    font-weight: 600;
+    color: var(--toolbarbutton-icon-fill);
+    opacity: 70%;
+  }
+}
+
 #tabbrowser-arrowscrollbox {
   --_bookmarks-height: 0px;
 
   position: absolute;
   top: calc(
-    var(--urlbar-container-height) +
     2 *
+    var(--urlbar-container-height) +
+    3 *
     var(--sidebar-padding) +
     var(--_bookmarks-height)
   ) !important;
@@ -76,7 +105,7 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   max-height: calc(
     100vh -
     var(--content-padding) -
-    3 *
+    4 *
     var(--urlbar-container-height) -
     var(--_bookmarks-height)
   ) !important;
