@@ -32,6 +32,7 @@
 
   .identity-box-button,
   #tracking-protection-icon-container,
+  #notification-popup-box,
   .urlbar-page-action {
     width: var(--xl) !important;
     height: var(--xl) !important;
