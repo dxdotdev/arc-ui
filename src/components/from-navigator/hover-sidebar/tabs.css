@@ -67,6 +67,7 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   width: 100% !important;
   height: var(--urlbar-container-height) !important;
   border-radius: var(--lg) !important;
+  transition: background-color var(--transition);
 
   &:hover {
     background-color: var(--base-100) !important;
@@ -78,7 +79,6 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
     margin-top: -1px;
     margin-left: -180px;
     opacity: 70%;
-    transition: none !important;
   }
 
   &::after {
