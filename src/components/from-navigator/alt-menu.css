@@ -1,35 +1,35 @@
 #menubar-items {
-	position: absolute;
-	top: var(--md);
-	left: 200vw;
-	z-index: 30;
+  position: absolute;
+  top: var(--md);
+  left: 200vw;
+  z-index: 30;
 }
 
 #toolbar-menubar:not([inactive]) #menubar-items {
-	left: calc(
-		var(--md) +
-		var(--sidebar-correction) *
-		(var(--sidebar-width) + var(--content-padding) / 2)
-	);
+  left: calc(
+    var(--md) +
+    var(--sidebar-correction) *
+    (var(--sidebar-width) + var(--content-padding) / 2)
+  );
 }
 
 #main-menubar {
-	display: flex !important;
-	overflow: hidden;
-	background-color: var(--base-100) !important;
-	background-image: none !important;
-	border: 2px solid var(--neutral) !important;
-	border-radius: var(--lg) !important;
-	box-shadow: var(--shadow);
-	transition: background-color var(--transition);
+  display: flex !important;
+  overflow: hidden;
+  background-color: var(--base-100) !important;
+  background-image: none !important;
+  border: 2px solid var(--neutral) !important;
+  border-radius: var(--lg) !important;
+  box-shadow: var(--shadow);
+  transition: background-color var(--transition);
 
-	menu {
-		padding: var(--md) var(--lg) !important;
-		border: none !important;
+  menu {
+    padding: var(--md) var(--lg) !important;
+    border: none !important;
 
-		&:hover,
-		&[open] {
-			background-color: var(--neutral) !important;
-		}
-	}
+    &:hover,
+    &[open] {
+      background-color: var(--neutral) !important;
+    }
+  }
 }

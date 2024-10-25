@@ -1,127 +1,127 @@
 #tabbrowser-arrowscrollbox {
-	--bookmarks-height: 0px;
+  --bookmarks-height: 0px;
 
-	position: absolute;
-	top: calc(
-		2 *
-		var(--urlbar-container-height) +
-		3 *
-		var(--sidebar-padding) +
-		var(--bookmarks-height)
-	) !important;
-	left: 0;
-	width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
-	max-height: calc(
-		100vh -
-		var(--content-padding) -
-		4 *
-		var(--urlbar-container-height) -
-		var(--bookmarks-height)
-	) !important;
+  position: absolute;
+  top: calc(
+    2 *
+    var(--urlbar-container-height) +
+    3 *
+    var(--sidebar-padding) +
+    var(--bookmarks-height)
+  ) !important;
+  left: 0;
+  width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
+  max-height: calc(
+    100vh -
+    var(--content-padding) -
+    4 *
+    var(--urlbar-container-height) -
+    var(--bookmarks-height)
+  ) !important;
 }
 
 #navigator-toolbox:not(:has(#PersonalToolbar[collapsed="true"])) {
-	&:has(#PlacesToolbarItems > .bookmark-item) #tabbrowser-arrowscrollbox {
-		--bookmarks-height: calc(
-			var(--urlbar-container-height) +
-			var(--sidebar-padding)
-		);
-	}
+  &:has(#PlacesToolbarItems > .bookmark-item) #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(
+      var(--urlbar-container-height) +
+      var(--sidebar-padding)
+    );
+  }
 
-	&:has(#PlacesToolbarItems > .bookmark-item:nth-child(5))
-		#tabbrowser-arrowscrollbox {
-		--bookmarks-height: calc(
-			2 *
-			(var(--urlbar-container-height) + var(--sidebar-padding))
-		);
-	}
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(5))
+    #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(
+      2 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
 
-	&:has(#PlacesToolbarItems > .bookmark-item:nth-child(9))
-		#tabbrowser-arrowscrollbox {
-		--bookmarks-height: calc(
-			3 *
-			(var(--urlbar-container-height) + var(--sidebar-padding))
-		);
-	}
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(9))
+    #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(
+      3 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
 
-	&:has(#PlacesToolbarItems > .bookmark-item:nth-child(13))
-		#tabbrowser-arrowscrollbox {
-		--bookmarks-height: calc(
-			4 *
-			(var(--urlbar-container-height) + var(--sidebar-padding))
-		);
-	}
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(13))
+    #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(
+      4 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
 
-	&:has(#PlacesToolbarItems > .bookmark-item:nth-child(17))
-		#tabbrowser-arrowscrollbox {
-		--bookmarks-height: calc(
-			5 *
-			(var(--urlbar-container-height) + var(--sidebar-padding))
-		);
-	}
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(17))
+    #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(
+      5 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
 
-	&:has(#PlacesToolbarItems > .bookmark-item:nth-child(25))
-		#tabbrowser-arrowscrollbox {
-		--bookmarks-height: calc(
-			6 *
-			(var(--urlbar-container-height) + var(--sidebar-padding))
-		);
-	}
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(25))
+    #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(
+      6 *
+      (var(--urlbar-container-height) + var(--sidebar-padding))
+    );
+  }
 }
 
 /* stylelint-disable-next-line selector-type-no-unknown */
-scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"] 
-	> * {
-	flex-direction: column !important;
-	gap: var(--sidebar-padding) !important;
-	overflow: hidden scroll;
+scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
+  > * {
+  flex-direction: column !important;
+  gap: var(--sidebar-padding) !important;
+  overflow: hidden scroll;
 }
 
 #tabbrowser-tabs {
-	border-inline: none !important;
-	padding-inline: 0 !important;
-	margin-inline: 0 !important;
+  border-inline: none !important;
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
 }
 
 #tabs-newtab-button {
-	position: absolute;
-	top: calc(-1 * (var(--sidebar-padding) + var(--urlbar-container-height))) !important;
-	width: 100% !important;
-	height: var(--urlbar-container-height) !important;
-	border-radius: var(--lg) !important;
-	transition: background-color var(--transition);
+  position: absolute;
+  top: calc(-1 * (var(--sidebar-padding) + var(--urlbar-container-height))) !important;
+  width: 100% !important;
+  height: var(--urlbar-container-height) !important;
+  border-radius: var(--lg) !important;
+  transition: background-color var(--transition);
 
-	&:hover {
-		background-color: var(--base-100) !important;
-	}
+  &:hover {
+    background-color: var(--base-100) !important;
+  }
 
-	.toolbarbutton-icon {
-		width: 2.5rem !important;
-		height: 2.5rem !important;
-		margin-top: -1px;
-		margin-left: -180px;
-		opacity: 0.7;
-	}
+  .toolbarbutton-icon {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    margin-top: -1px;
+    margin-left: -180px;
+    opacity: 0.7;
+  }
 
-	&::after {
-		color: var(--toolbarbutton-icon-fill);
-		font-weight: 600;
-		opacity: 0.7;
-		content: "New Tab";
-	}
+  &::after {
+    color: var(--toolbarbutton-icon-fill);
+    font-weight: 600;
+    opacity: 0.7;
+    content: "New Tab";
+  }
 }
 
 .tab-background {
-	height: var(--urlbar-container-height) !important;
-	margin: 0 !important;
-	border-radius: var(--lg) !important;
-	outline: none !important;
-	transition: background-color var(--transition);
+  height: var(--urlbar-container-height) !important;
+  margin: 0 !important;
+  border-radius: var(--lg) !important;
+  outline: none !important;
+  transition: background-color var(--transition);
 
-	&[selected] {
-		background-color: var(--neutral) !important;
-		box-shadow: none !important;
-	}
+  &[selected] {
+    background-color: var(--neutral) !important;
+    box-shadow: none !important;
+  }
 }
 
 .tabbrowser-tab {
@@ -130,71 +130,70 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   margin-inline: 0 !important;
   padding: 0 !important;
 
-	&:not([fadein]) {
-		display: none;
-	}
+  &:not([fadein]) {
+    display: none;
+  }
 
-	&:hover .tab-background:not([selected]) {
-		background-color: var(--base-100) !important;
-	}
+  &:hover .tab-background:not([selected]) {
+    background-color: var(--base-100) !important;
+  }
 }
 
 #tabbrowser-tabs[haspinnedtabs] .tabbrowser-tab {
-	width: 100% !important;
-	max-width: none !important;
-	margin-inline: 0 !important;
-	padding: 0 !important;
-
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding: 0 !important;
 }
 
 #tabbrowser-tabs[haspinnedtabs]
-	.tabbrowser-tab:nth-child(1 of [fadein]:not([pinned], [hidden]))
-	.tab-stack {
-	padding-top: var(--sidebar-padding);
-	border-top: 2px solid var(--base-100);
+  .tabbrowser-tab:nth-child(1 of [fadein]:not([pinned], [hidden]))
+  .tab-stack {
+  padding-top: var(--sidebar-padding);
+  border-top: 2px solid var(--base-100);
 }
 
 .tab-content {
-	gap: var(--sm);
-	padding: 0 var(--lg) !important;
+  gap: var(--sm);
+  padding: 0 var(--lg) !important;
 
-	.tab-icon-image {
-		margin-inline-end: 5.5px;
-	}
+  .tab-icon-image {
+    margin-inline-end: 5.5px;
+  }
 
-	.tab-close-button {
-		border-radius: var(--sm) !important;
-		opacity: 0;
-		transition: all var(--transition);
+  .tab-close-button {
+    border-radius: var(--sm) !important;
+    opacity: 0;
+    transition: all var(--transition);
 
-		&:hover {
-			background-color: var(--base-100) !important;
-		}
-	}
+    &:hover {
+      background-color: var(--base-100) !important;
+    }
+  }
 
-	&:hover .tab-close-button {
-		opacity: 1;
-	}
+  &:hover .tab-close-button {
+    opacity: 1;
+  }
 }
 
 #tab-preview-panel {
-	--panel-width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
+  --panel-width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
 
-	margin-top: calc(-1 * var(--urlbar-container-height) - 4px) !important;
-	margin-left: calc(var(--panel-width) + 2px + var(--sidebar-padding)) !important;
+  margin-top: calc(-1 * var(--urlbar-container-height) - 4px) !important;
+  margin-left: calc(var(--panel-width) + 2px + var(--sidebar-padding)) !important;
 }
 
 slot[part="content"] {
-	border: 2px solid var(--neutral) !important;
-	border-radius: var(--lg) !important;
+  border: 2px solid var(--neutral) !important;
+  border-radius: var(--lg) !important;
 }
 
 .tab-preview-text-container {
-	padding-right: var(--lg) !important;
-	padding-left: var(--lg) !important;
+  padding-right: var(--lg) !important;
+  padding-left: var(--lg) !important;
 }
 
 .tab-preview-thumbnail-container {
-	width: var(--panel-width) !important;
-	border-top: 2px solid var(--neutral) !important;
+  width: var(--panel-width) !important;
+  border-top: 2px solid var(--neutral) !important;
 }

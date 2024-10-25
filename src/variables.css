@@ -1,35 +1,35 @@
 :root {
-	/* sizing and spacing (reference liftkit) */
-	--xs: 0.129rem;
-	--sm: 0.272rem;
-	--md: 0.618rem;
-	--lg: 1rem;
-	--xl: 1.618rem;
-	--xxl: 2.618rem;
+  /* sizing and spacing (reference liftkit) */
+  --xs: 0.129rem;
+  --sm: 0.272rem;
+  --md: 0.618rem;
+  --lg: 1rem;
+  --xl: 1.618rem;
+  --xxl: 2.618rem;
 
-	/* colors (reference daisy ui) */
-	--primary: ;
-	--primary-content: ;
-	--secondary: ;
-	--secondary-content: ;
-	--accent: ;
-	--accent-content: ;
-	--neutral: hsl(from var(--base-100) h s calc(l + 5));
-	--neutral-content: ;
-	--base-100: var(--toolbar-bgcolor);
-	--base-200: hsl(from var(--base-100) h s calc(l - 5));
-	--base-300: hsl(from var(--base-200) h s calc(l - 5));
-	--base-content: var(--toolbar-color);
-	--info: ;
-	--info-content: ;
-	--success: #4ade80;
-	--success-content: ;
-	--warning: #fcd34d;
-	--warning-content: ;
-	--error: #f87171;
-	--error-content: ;
+  /* colors (reference daisy ui) */
+  --primary: ;
+  --primary-content: ;
+  --secondary: ;
+  --secondary-content: ;
+  --accent: ;
+  --accent-content: ;
+  --neutral: hsl(from var(--base-100) h s calc(l + 5));
+  --neutral-content: ;
+  --base-100: var(--toolbar-bgcolor);
+  --base-200: hsl(from var(--base-100) h s calc(l - 5));
+  --base-300: hsl(from var(--base-200) h s calc(l - 5));
+  --base-content: var(--toolbar-color);
+  --info: ;
+  --info-content: ;
+  --success: #4ade80;
+  --success-content: ;
+  --warning: #fcd34d;
+  --warning-content: ;
+  --error: #f87171;
+  --error-content: ;
 
-	/* other */
-	--shadow: 0 2px 12px rgb(0 0 0 / 25%);
-	--transition: 100ms ease-in-out;
+  /* other */
+  --shadow: 0 2px 12px rgb(0 0 0 / 25%);
+  --transition: 100ms ease-in-out;
 }

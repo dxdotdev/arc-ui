@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/cli-kit": "^0.4.1",
+    "@types/bun": "^1.1.12",
     "cli-highlight": "^2.1.11",
     "clipboardy": "^4.0.0",
     "glob": "^11.0.0",

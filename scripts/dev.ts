@@ -1,4 +1,4 @@
-import { watch, unlinkSync, existsSync } from 'node:fs'
+import { existsSync, unlinkSync, watch } from 'node:fs'
 import { homedir } from 'node:os'
 import { highlight } from 'cli-highlight'
 import clipboard from 'clipboardy'

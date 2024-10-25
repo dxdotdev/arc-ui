@@ -1,4 +1,4 @@
-import { info, error, build } from './utils'
+import { build, error, info } from './utils'
 
 console.log()
 info('check', 'Getting data to start building...')
@@ -10,6 +10,5 @@ try {
   info('build', 'Complete!')
   console.log()
 } catch (err) {
-  error('Got error:')
-  console.log(`\n${err}\n`)
+  error('Got error:', err)
 }

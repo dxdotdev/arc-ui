@@ -2,29 +2,29 @@
 @import url("./components/index.css");
 
 :root {
-	--content-padding: var(--md);
-	--content-border: 1px solid var(--base-200);
-	--content-border-radius: var(--lg);
-	--sidebar-width: 300px;
-	--sidebar-padding: var(--sm);
+  --content-padding: var(--md);
+  --content-border: 1px solid var(--base-200);
+  --content-border-radius: var(--lg);
+  --sidebar-width: 300px;
+  --sidebar-padding: var(--sm);
 
-	font-size: 16px !important;
+  font-size: 16px !important;
 
-	&[inFullscreen] {
-		--content-padding: 0px;
-		--content-border: none;
-		--content-border-radius: 0px;
-	}
+  &[inFullscreen] {
+    --content-padding: 0px;
+    --content-border: none;
+    --content-border-radius: 0px;
+  }
 }
 
 #browser {
-	padding: var(--content-padding);
-	background-color: var(--base-100) !important;
+  padding: var(--content-padding);
+  background-color: var(--base-100) !important;
 }
 
 #appcontent {
-	overflow: hidden;
-	border: var(--content-border);
-	border-radius: var(--content-border-radius);
-	box-shadow: var(--shadow);
+  overflow: hidden;
+  border: var(--content-border);
+  border-radius: var(--content-border-radius);
+  box-shadow: var(--shadow);
 }

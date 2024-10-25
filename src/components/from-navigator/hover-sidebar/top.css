@@ -1,58 +1,58 @@
 #titlebar {
-	height: var(--xxl) !important;
+  height: var(--xxl) !important;
 }
 
 #nav-bar {
-	--toolbar-bgcolor: transparent;
+  --toolbar-bgcolor: transparent;
 
-	position: absolute !important;
-	inset: var(--sidebar-padding) var(--sidebar-padding) auto auto;
-	height: var(--xxl) !important;
-	border: none !important;
+  position: absolute !important;
+  inset: var(--sidebar-padding) var(--sidebar-padding) auto auto;
+  height: var(--xxl) !important;
+  border: none !important;
 }
 
 .titlebar-buttonbox-container {
-	position: absolute;
-	inset: var(--sidebar-padding) auto auto var(--sidebar-padding);
-	height: var(--xxl) !important;
+  position: absolute;
+  inset: var(--sidebar-padding) auto auto var(--sidebar-padding);
+  height: var(--xxl) !important;
 }
 
 .titlebar-button {
-	padding: var(--sm) !important;
+  padding: var(--sm) !important;
 
-	image {
-		width: 0.95rem !important;
-		height: 0.95rem !important;
-		background-color: var(--neutral) !important;
-		background-image: none !important;
-		transition: background-color var(--transition);
-	}
+  image {
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+    background-color: var(--neutral) !important;
+    background-image: none !important;
+    transition: background-color var(--transition);
+  }
 
-	&:where(.titlebar-max, .titlebar-restore):hover image {
-		background-color: var(--success) !important;
-	}
+  &:where(.titlebar-max, .titlebar-restore):hover image {
+    background-color: var(--success) !important;
+  }
 
-	&.titlebar-close:hover image {
-		background-color: var(--error) !important;
-	}
+  &.titlebar-close:hover image {
+    background-color: var(--error) !important;
+  }
 
-	&.titlebar-min:hover image {
-		background-color: var(--warning) !important;
-	}
+  &.titlebar-min:hover image {
+    background-color: var(--warning) !important;
+  }
 }
 
 #PanelUI-menu-button,
 #downloads-button {
-	.toolbarbutton-badge-stack {
-		border-radius: var(--md) !important;
-		transition: background-color var(--transition);
-	}
+  .toolbarbutton-badge-stack {
+    border-radius: var(--md) !important;
+    transition: background-color var(--transition);
+  }
 
-	&:hover .toolbarbutton-badge-stack {
-		background-color: var(--base-100) !important;
-	}
+  &:hover .toolbarbutton-badge-stack {
+    background-color: var(--base-100) !important;
+  }
 
-	&[open] .toolbarbutton-badge-stack {
-		background-color: var(--neutral) !important;
-	}
+  &[open] .toolbarbutton-badge-stack {
+    background-color: var(--neutral) !important;
+  }
 }
