@@ -1,56 +1,56 @@
-@import "./top.css";
-@import "./search-input.css";
-@import "./bookmarks.css";
-@import "./tabs.css";
-@import "./bottom.css";
+@import url("./top.css");
+@import url("./search-input.css");
+@import url("./bookmarks.css");
+@import url("./tabs.css");
+@import url("./bottom.css");
 
 @property --sidebar-correction {
-  syntax: "<number>";
-  initial-value: 1;
-  inherits: true;
+	syntax: "<number>";
+	initial-value: 1;
+	inherits: true;
 }
 
 #navigator-toolbox {
-  --sidebar-correction: 1;
-  --sidebar-translate: calc(var(--sidebar-width) + var(--content-padding) / 2);
+	--sidebar-correction: 1;
+	--sidebar-translate: calc(var(--sidebar-width) + var(--content-padding) / 2);
 
-  position: absolute;
-  z-index: 10;
-  inset: 50vh auto auto calc(-1 * var(--sidebar-width));
-  transform: translateY(-50%);
-  width: var(--sidebar-width) !important;
-  height: calc(100vh - var(--content-padding)) !important;
+	position: absolute;
+	z-index: 10;
+	width: var(--sidebar-width) !important;
+	height: calc(100vh - var(--content-padding)) !important;
+	padding: var(--sidebar-padding) !important;
+	background-color: var(--base-200) !important;
+	border: 2px solid var(--neutral) !important;
+	border-radius: var(--lg) !important;
+	box-shadow: var(--shadow);
+	transform: translateY(-50%);
+	transition: left 150ms ease-in-out, --sidebar-correction 150ms ease-in-out !important;
+	inset: 50vh auto auto calc(-1 * var(--sidebar-width));
 
-  border: 2px solid var(--neutral) !important;
-  border-radius: var(--lg) !important;
-  background-color: var(--base-200) !important;
-  box-shadow: var(--shadow);
-  padding: var(--sidebar-padding) !important;
-  transition: left 150ms ease-in-out, --sidebar-correction 150ms ease-in-out !important;
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		width: var(--content-padding);
+		height: 100%;
+		content: "";
+	}
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: var(--content-padding);
-    height: 100%;
-  }
+	&::before {
+		left: calc(-1 * var(--content-padding));
+	}
 
-  &::before {
-    left: calc(-1 * var(--content-padding));
-  }
+	&::after {
+		right: calc(-1 * var(--content-padding));
+	}
 
-  &::after {
-    right: calc(-1 * var(--content-padding));
-  }
+	&:has(#toolbar-menubar[inactive]):not(
+			:has(:is(#urlbar[breakout-extend], #main-menubar):hover)
+		):hover {
+		--sidebar-correction: 0;
 
-  &:has(#toolbar-menubar[inactive]):not(
-      :has(:is(#urlbar[breakout-extend], #main-menubar):hover)
-    ):hover {
-    --sidebar-correction: 0;
-    left: calc(var(--content-padding) / 2);
-  }
+		left: calc(var(--content-padding) / 2);
+	}
 }
 
 .titlebar-spacer,
@@ -59,5 +59,5 @@
 #scrollbutton-up,
 #scrollbutton-down,
 spacer {
-  display: none;
+	display: none;
 }

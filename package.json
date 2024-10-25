@@ -10,16 +10,15 @@
   },
   "devDependencies": {
     "@astrojs/cli-kit": "^0.4.1",
-    "@biomejs/biome": "1.5.2",
-    "@types/bun": "latest",
     "cli-highlight": "^2.1.11",
-    "lightningcss": "^1.25.1"
+    "clipboardy": "^4.0.0",
+    "glob": "^11.0.0",
+    "lightningcss": "^1.25.1",
+    "stylelint": "^16.10.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^36.0.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "clipboardy": "^4.0.0",
-    "glob": "^11.0.0"
   }
 }

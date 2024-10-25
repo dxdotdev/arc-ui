@@ -1,9 +1,9 @@
 #navigator-toolbox {
-  --_btn-size: 32px;
+	--btn-size: 32px;
 }
 
 #alltabs-button {
-  display: none;
+	display: none;
 }
 
 #firefox-view-button,
@@ -11,51 +11,51 @@
 #save-to-pocket-button,
 #unified-extensions-button,
 #fxa-toolbar-menu-button {
-  position: fixed;
-  display: block !important;
-  bottom: var(--sidebar-padding);
+	position: fixed;
+	bottom: var(--sidebar-padding);
+	display: block !important;
 }
 
 #firefox-view-button {
-  left: var(--sidebar-padding);
+	left: var(--sidebar-padding);
 }
 
 #new-tab-button {
-  right: var(--sidebar-padding);
+	right: var(--sidebar-padding);
 }
 
 #save-to-pocket-button,
 #unified-extensions-button,
 #fxa-toolbar-menu-button {
-  bottom: calc(var(--sidebar-padding) + 36px / 2);
-  width: var(--_btn-size) !important;
-  height: var(--_btn-size) !important;
-  transform: translate(-50%, +50%);
+	bottom: calc(var(--sidebar-padding) + 36px / 2);
+	width: var(--btn-size) !important;
+	height: var(--btn-size) !important;
+	transform: translate(-50%, +50%);
 }
 
 #save-to-pocket-button {
-  left: calc(50% - var(--sidebar-padding) - var(--_btn-size));
+	left: calc(50% - var(--sidebar-padding) - var(--btn-size));
 }
 
 #unified-extensions-button {
-  left: calc(50% + var(--sidebar-padding) + var(--_btn-size));
+	left: calc(50% + var(--sidebar-padding) + var(--btn-size));
 }
 
 #fxa-toolbar-menu-button {
-  left: 50%;
+	left: 50%;
 
-  .toolbarbutton-badge-stack {
-    width: var(--_btn-size) !important;
-    height: var(--_btn-size) !important;
-    border-radius: var(--md) !important;
-    transition: background-color var(--transition);
-  }
+	.toolbarbutton-badge-stack {
+		width: var(--btn-size) !important;
+		height: var(--btn-size) !important;
+		border-radius: var(--md) !important;
+		transition: background-color var(--transition);
+	}
 
-  &:hover .toolbarbutton-badge-stack {
-    background-color: var(--base-100) !important;
-  }
+	&:hover .toolbarbutton-badge-stack {
+		background-color: var(--base-100) !important;
+	}
 
-  &[open] .toolbarbutton-badge-stack {
-    background-color: var(--neutral) !important;
-  }
+	&[open] .toolbarbutton-badge-stack {
+		background-color: var(--neutral) !important;
+	}
 }

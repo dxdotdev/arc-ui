@@ -1,17 +1,17 @@
 #statuspanel {
-  max-width: 40% !important;
-  margin: var(--md) !important;
-  padding: var(--sm) var(--lg) !important;
-  border: 2px solid var(--neutral) !important;
-  border-radius: var(--lg) !important;
-  background-color: var(--base-100) !important;
+	max-width: 40% !important;
+	margin: var(--md) !important;
+	padding: var(--sm) var(--lg) !important;
+	background-color: var(--base-100) !important;
+	border: 2px solid var(--neutral) !important;
+	border-radius: var(--lg) !important;
 }
 
 #statuspanel-label {
-  padding: 0px !important;
-  border: none !important;
-  background-color: transparent !important;
-  color: var(--base-content) !important;
-  font-size: 14px;
-  font-weight: 600;
+	padding: 0 !important;
+	color: var(--base-content) !important;
+	font-weight: 600;
+	font-size: 14px;
+	background-color: transparent !important;
+	border: none !important;
 }

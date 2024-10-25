@@ -1,0 +1,8 @@
+{
+	"$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/refs/heads/master/src/schemas/json/stylelintrc.json",
+	"extends": ["stylelint-config-standard", "stylelint-config-rational-order"],
+	"rules": {
+		"selector-class-pattern": null,
+		"selector-id-pattern": null
+	}
+}

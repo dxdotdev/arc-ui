@@ -1,22 +1,22 @@
-@import "./from-navigator/search-prompt.css";
-@import "./from-navigator/hover-sidebar/index.css";
-@import "./from-navigator/alt-menu.css";
-@import "./from-navigator/screenshot-panel.css";
-@import "./url-indicator.css";
-@import "./sidebar.css";
+@import url("./from-navigator/search-prompt.css");
+@import url("./from-navigator/hover-sidebar/index.css");
+@import url("./from-navigator/alt-menu.css");
+@import url("./from-navigator/screenshot-panel.css");
+@import url("./url-indicator.css");
+@import url("./sidebar.css");
 
 /* small buttons on sidebar (navigator) */
 #navigator-toolbox .toolbarbutton-1 {
-  width: 36px;
-  height: 36px;
-  padding: 0px !important;
+	width: 36px;
+	height: 36px;
+	padding: 0 !important;
 
-  .toolbarbutton-icon {
-    border-radius: var(--md) !important;
-    transition: background-color var(--transition);
-  }
+	.toolbarbutton-icon {
+		border-radius: var(--md) !important;
+		transition: background-color var(--transition);
+	}
 
-  &:not([disabled]):hover .toolbarbutton-icon {
-    background-color: var(--base-100) !important;
-  }
+	&:not([disabled]):hover .toolbarbutton-icon {
+		background-color: var(--base-100) !important;
+	}
 }

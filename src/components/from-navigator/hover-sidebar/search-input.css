@@ -1,102 +1,103 @@
 :root {
-  --urlbar-container-height: calc(3.5 * var(--lg)) !important;
+	--urlbar-container-height: calc(3.5 * var(--lg)) !important;
 }
 
 #urlbar,
 #urlbar-container,
 #urlbar-input-container {
-  --urlbar-height: var(--xl) !important;
-  --urlbar-toolbar-height: calc(3.5 * var(--lg)) !important;
-  --urlbar-container-height: calc(3.5 * var(--lg)) !important;
+	--urlbar-height: var(--xl) !important;
+	--urlbar-toolbar-height: calc(3.5 * var(--lg)) !important;
+	--urlbar-container-height: calc(3.5 * var(--lg)) !important;
+}
+
+.identity-box-button,
+#tracking-protection-icon-container,
+#notification-popup-box,
+.urlbar-page-action {
+	width: var(--xl) !important;
+	height: var(--xl) !important;
+	margin: auto 0;
+	border-radius: var(--md) !important;
+	transition: background-color var(--transition);
+	padding-inline: 0 !important;
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	& > * {
+		margin: auto !important;
+	}
+
+	&:hover {
+		background-color: hsl(from var(--neutral) h s calc(l + 10)) !important;
+	}
+}
+
+#identity-icon-label {
+	margin: 0 !important;
+}
+
+#reader-mode-button-icon {
+	margin-top: -1px !important;
+}
+
+#star-button {
+	margin-top: -2px !important;
 }
 
 #urlbar-container:not(:has(#urlbar[breakout-extend])) {
-  inset: calc(2 * var(--sidebar-padding) + var(--xxl)) auto auto
-    var(--sidebar-padding);
-  transform: none;
-  width: calc(100% - 2 * var(--sidebar-padding)) !important;
-  margin-inline: 0 !important;
+	width: calc(100% - 2 * var(--sidebar-padding)) !important;
+	transform: none;
+	inset: calc(2 * var(--sidebar-padding) + var(--xxl)) auto auto
+		var(--sidebar-padding);
+	margin-inline: 0 !important;
 
-  #urlbar {
-    height: var(--urlbar-container-height) !important;
-    border: none !important;
-    background-color: var(--base-100) !important;
-    box-shadow: none;
-    padding: 0px var(--md) !important;
-    transition: background-color var(--transition) !important;
+	#urlbar {
+		height: var(--urlbar-container-height) !important;
+		padding: 0 var(--md) !important;
+		background-color: var(--base-100) !important;
+		border: none !important;
+		box-shadow: none;
+		transition: background-color var(--transition) !important;
 
-    &:hover {
-      background-color: var(--neutral) !important;
-    }
-  }
+		&:hover {
+			background-color: var(--neutral) !important;
+		}
+	}
 
-  .identity-box-button,
-  #tracking-protection-icon-container,
-  #notification-popup-box,
-  .urlbar-page-action {
-    width: var(--xl) !important;
-    height: var(--xl) !important;
-    margin: auto 0;
-    padding-inline: 0 !important;
-    border-radius: var(--md) !important;
-    transition: background-color var(--transition);
+	#identity-permission-box {
+		width: auto !important;
+		padding: 0 var(--sm) !important;
+	}
 
-    & > * {
-      margin: auto !important;
-    }
+	.urlbar-input-container {
+		padding: 0 !important;
+		border: none !important;
+	}
 
-    #identity-icon-label {
-      margin: 0 !important;
-    }
+	.urlbar-input-box {
+		font-size: 16px !important;
+	}
 
-    #reader-mode-button-icon {
-      margin-top: -1px !important;
-    }
+	&:has(#identity-box.localResource) {
+		#urlbar-input {
+			text-overflow: ellipsis;
+		}
+	}
 
-    #star-button {
-      margin-top: -2px !important;
-    }
-
-    &:hover {
-      background-color: hsl(from var(--neutral) h s calc(l + 10)) !important;
-    }
-  }
-
-  #identity-permission-box {
-    width: auto !important;
-    padding: 0 var(--sm) !important;
-  }
-
-  .urlbar-input-container {
-    padding: 0 !important;
-    border: none !important;
-  }
-
-  .urlbar-input-box {
-    font-size: 16px !important;
-  }
-
-  &:has(#identity-box.localResource) {
-    #urlbar-input {
-      text-overflow: ellipsis;
-    }
-  }
-
-  &:has(#identity-box.chromeUI) {
-    #identity-icon-label {
-      display: none;
-    }
-  }
+	&:has(#identity-box.chromeUI) {
+		#identity-icon-label {
+			display: none;
+		}
+	}
 }
 
 #nav-bar:has(#urlbar[breakout-extend])::after {
-  content: "";
-  position: fixed;
-  top: calc(2 * var(--sidebar-padding) + var(--xxl));
-  left: var(--sidebar-padding);
-  z-index: 10 !important;
-  width: calc(100% - 2 * var(--sidebar-padding));
-  height: var(--urlbar-container-height);
-  border-radius: var(--lg);
-  background-color: var(--base-100);
+	position: fixed;
+	top: calc(2 * var(--sidebar-padding) + var(--xxl));
+	left: var(--sidebar-padding);
+	z-index: 10 !important;
+	width: calc(100% - 2 * var(--sidebar-padding));
+	height: var(--urlbar-container-height);
+	background-color: var(--base-100);
+	border-radius: var(--lg);
+	content: "";
 }

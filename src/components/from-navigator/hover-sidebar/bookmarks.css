@@ -1,58 +1,58 @@
 #OtherBookmarks,
 #PlacesChevron,
 #personal-toolbar-empty-description {
-  display: none;
+	display: none;
 }
 
 #PersonalToolbar {
-  padding: 0 !important;
-  max-height: none !important;
-  background-color: transparent !important;
+	max-height: none !important;
+	padding: 0 !important;
+	background-color: transparent !important;
 
-  &[collapsed="true"] {
-    display: none;
-  }
+	&[collapsed="true"] {
+		display: none;
+	}
 }
 
 #PlacesToolbarItems {
-  display: grid !important;
-  gap: var(--sidebar-padding);
-  padding-top: calc(2 * var(--sidebar-padding) + var(--urlbar-container-height));
+	display: grid !important;
+	gap: var(--sidebar-padding);
+	padding-top: calc(2 * var(--sidebar-padding) + var(--urlbar-container-height));
 
-  &:has(.bookmark-item:nth-child(2)) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	&:has(.bookmark-item:nth-child(2)) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-  &:has(.bookmark-item:nth-child(3)) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+	&:has(.bookmark-item:nth-child(3)) {
+		grid-template-columns: repeat(3, 1fr);
+	}
 
-  &:has(.bookmark-item:nth-child(4)) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+	&:has(.bookmark-item:nth-child(4)) {
+		grid-template-columns: repeat(4, 1fr);
+	}
 
-  .bookmark-item {
-    max-width: none !important;
-    visibility: visible !important;
-    min-height: var(--urlbar-container-height);
-    margin: 0 !important;
-    padding: var(--sm) !important;
-    border-radius: var(--lg) !important;
-    background-color: var(--base-100) !important;
-    transition: background-color var(--transition);
+	.bookmark-item {
+		max-width: none !important;
+		min-height: var(--urlbar-container-height);
+		margin: 0 !important;
+		padding: var(--sm) !important;
+		background-color: var(--base-100) !important;
+		border-radius: var(--lg) !important;
+		visibility: visible !important;
+		transition: background-color var(--transition);
 
-    &:hover {
-      background-color: var(--neutral) !important;
-    }
+		&:hover {
+			background-color: var(--neutral) !important;
+		}
 
-    .toolbarbutton-icon {
-      width: calc(2 * var(--md)) !important;
-      height: calc(2 * var(--md)) !important;
-      margin-inline-end: 0 !important;
-    }
+		.toolbarbutton-icon {
+			width: calc(2 * var(--md)) !important;
+			height: calc(2 * var(--md)) !important;
+			margin-inline-end: 0 !important;
+		}
 
-    .toolbarbutton-text {
-      display: none !important;
-    }
-  }
+		.toolbarbutton-text {
+			display: none !important;
+		}
+	}
 }

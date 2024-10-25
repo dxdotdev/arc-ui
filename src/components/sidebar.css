@@ -1,24 +1,24 @@
-#sidebar-box {
-  overflow: hidden;
-  border: 2px solid var(--neutral) !important;
-  border-radius: var(--lg) !important;
-  box-shadow: var(--shadow);
-
-  &[sidebarcommand*="sidebar-action"] > #sidebar-header {
-    display: none !important;
-  }
+#sidebar-header {
+	border: none !important;
 }
 
-#sidebar-header {
-  border: none !important;
+#sidebar-box {
+	overflow: hidden;
+	border: 2px solid var(--neutral) !important;
+	border-radius: var(--lg) !important;
+	box-shadow: var(--shadow);
+
+	&[sidebarcommand*="sidebar-action"] > #sidebar-header {
+		display: none !important;
+	}
 }
 
 :is(#sidebar-switcher-target, #sidebar-close):hover {
-  background-color: var(--neutral) !important;
+	background-color: var(--neutral) !important;
 }
 
 #sidebar-splitter {
-  width: calc(var(--content-padding) / 2) !important;
-  background-color: transparent !important;
-  border: none !important;
+	width: calc(var(--content-padding) / 2) !important;
+	background-color: transparent !important;
+	border: none !important;
 }
