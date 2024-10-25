@@ -20,7 +20,7 @@ The Arc UI repo is using [bun](https://bun.sh). Make sure you have the [latest v
 
 1. Close Firefox and stop development server
 
-2. Run the command `bash ./scripts/fix-dev-server.sh`
+2. Run the command `bun run dev:fix`
 
 3. Open Firefox, run development server again and follow instructions normally
 

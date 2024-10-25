@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "bun run scripts/build.ts",
-    "dev": "bun run scripts/dev.ts"
+    "dev": "bun run scripts/dev.ts",
+    "dev:fix": "./scripts/fix-dev-server.sh"
   },
   "devDependencies": {
     "@astrojs/cli-kit": "^0.4.1",
