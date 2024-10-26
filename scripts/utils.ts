@@ -6,9 +6,7 @@ export function time(): string {
 }
 
 export function info(title: string, text: string) {
-  console.log(
-    `${time()}${label(`[${title}]`, color.visible, color.blue)}${text}`,
-  )
+  console.log(`${time()}${label(`[${title}]`, color.visible, color.blue)}${text}`)
 }
 
 export function error(text: string, error: unknown) {

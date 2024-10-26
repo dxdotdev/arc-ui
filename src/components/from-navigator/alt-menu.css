@@ -6,11 +6,7 @@
 }
 
 #toolbar-menubar:not([inactive]) #menubar-items {
-  left: calc(
-    var(--md) +
-    var(--sidebar-correction) *
-    (var(--sidebar-width) + var(--content-padding) / 2)
-  );
+  left: calc(var(--md) + var(--sidebar-correction) * (var(--sidebar-width) + var(--content-padding) / 2));
 }
 
 #main-menubar {

@@ -7,7 +7,8 @@
     "enabled": true
   },
   "formatter": {
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "lineWidth": 120
   },
   "linter": {
     "rules": {

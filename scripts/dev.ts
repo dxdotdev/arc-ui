@@ -9,9 +9,7 @@ console.log()
 info('check', 'Checking data to start watching...')
 
 try {
-  const profilesConfig = await Bun.file(
-    `${homedir()}/.mozilla/firefox/profiles.ini`,
-  ).text()
+  const profilesConfig = await Bun.file(`${homedir()}/.mozilla/firefox/profiles.ini`).text()
 
   const pathLine = profilesConfig.split('\n').find((s) => s.startsWith('Path='))
   const userFolder = pathLine?.split('=')[1]
@@ -51,21 +49,17 @@ try {
 
   let changeCounter = 0
 
-  watch(
-    import.meta.dir.replace('/scripts', '/src'),
-    { recursive: true },
-    () => {
-      if (changeCounter === 0) {
-        info('watch', 'Change detected')
-        build(userChromeCssPath)
+  watch(import.meta.dir.replace('/scripts', '/src'), { recursive: true }, () => {
+    if (changeCounter === 0) {
+      info('watch', 'Change detected')
+      build(userChromeCssPath)
 
-        changeCounter++
-        return
-      }
+      changeCounter++
+      return
+    }
 
-      changeCounter = 0
-    },
-  )
+    changeCounter = 0
+  })
 } catch (err) {
   error('Got error:', err)
 }

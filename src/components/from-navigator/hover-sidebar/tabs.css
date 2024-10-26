@@ -2,76 +2,40 @@
   --bookmarks-height: 0px;
 
   position: absolute;
-  top: calc(
-    2 *
-    var(--urlbar-container-height) +
-    3 *
-    var(--sidebar-padding) +
-    var(--bookmarks-height)
-  ) !important;
+  top: calc(2 * var(--urlbar-container-height) + 3 * var(--sidebar-padding) + var(--bookmarks-height)) !important;
   left: 0;
   width: calc(var(--sidebar-width) - 4px - 2 * var(--sidebar-padding)) !important;
-  max-height: calc(
-    100vh -
-    var(--content-padding) -
-    4 *
-    var(--urlbar-container-height) -
-    var(--bookmarks-height)
-  ) !important;
+  max-height: calc(100vh - var(--content-padding) - 4 * var(--urlbar-container-height) - var(--bookmarks-height)) !important;
 }
 
 #navigator-toolbox:not(:has(#PersonalToolbar[collapsed="true"])) {
   &:has(#PlacesToolbarItems > .bookmark-item) #tabbrowser-arrowscrollbox {
-    --bookmarks-height: calc(
-      var(--urlbar-container-height) +
-      var(--sidebar-padding)
-    );
+    --bookmarks-height: calc(var(--urlbar-container-height) + var(--sidebar-padding));
   }
 
-  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(5))
-    #tabbrowser-arrowscrollbox {
-    --bookmarks-height: calc(
-      2 *
-      (var(--urlbar-container-height) + var(--sidebar-padding))
-    );
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(5)) #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(2 * (var(--urlbar-container-height) + var(--sidebar-padding)));
   }
 
-  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(9))
-    #tabbrowser-arrowscrollbox {
-    --bookmarks-height: calc(
-      3 *
-      (var(--urlbar-container-height) + var(--sidebar-padding))
-    );
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(9)) #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(3 * (var(--urlbar-container-height) + var(--sidebar-padding)));
   }
 
-  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(13))
-    #tabbrowser-arrowscrollbox {
-    --bookmarks-height: calc(
-      4 *
-      (var(--urlbar-container-height) + var(--sidebar-padding))
-    );
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(13)) #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(4 * (var(--urlbar-container-height) + var(--sidebar-padding)));
   }
 
-  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(17))
-    #tabbrowser-arrowscrollbox {
-    --bookmarks-height: calc(
-      5 *
-      (var(--urlbar-container-height) + var(--sidebar-padding))
-    );
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(17)) #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(5 * (var(--urlbar-container-height) + var(--sidebar-padding)));
   }
 
-  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(25))
-    #tabbrowser-arrowscrollbox {
-    --bookmarks-height: calc(
-      6 *
-      (var(--urlbar-container-height) + var(--sidebar-padding))
-    );
+  &:has(#PlacesToolbarItems > .bookmark-item:nth-child(25)) #tabbrowser-arrowscrollbox {
+    --bookmarks-height: calc(6 * (var(--urlbar-container-height) + var(--sidebar-padding)));
   }
 }
 
 /* stylelint-disable-next-line selector-type-no-unknown */
-scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
-  > * {
+scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"] > * {
   flex-direction: column !important;
   gap: var(--sidebar-padding) !important;
   overflow: hidden scroll;
@@ -146,9 +110,7 @@ scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"]
   padding: 0 !important;
 }
 
-#tabbrowser-tabs[haspinnedtabs]
-  .tabbrowser-tab:nth-child(1 of [fadein]:not([pinned], [hidden]))
-  .tab-stack {
+#tabbrowser-tabs[haspinnedtabs] .tabbrowser-tab:nth-child(1 of [fadein]:not([pinned], [hidden])) .tab-stack {
   padding-top: var(--sidebar-padding);
   border-top: 2px solid var(--base-100);
 }

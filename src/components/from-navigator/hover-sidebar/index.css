@@ -44,9 +44,7 @@
     right: calc(-1 * var(--content-padding));
   }
 
-  &:has(#toolbar-menubar[inactive]):not(
-      :has(:is(#urlbar[breakout-extend], #main-menubar):hover)
-    ):hover {
+  &:has(#toolbar-menubar[inactive]):not(:has(:is(#urlbar[breakout-extend], #main-menubar):hover)):hover {
     --sidebar-correction: 0;
 
     left: calc(var(--content-padding) / 2);

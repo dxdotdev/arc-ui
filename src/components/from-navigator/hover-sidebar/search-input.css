@@ -46,8 +46,7 @@
 #urlbar-container:not(:has(#urlbar[breakout-extend])) {
   width: calc(100% - 2 * var(--sidebar-padding)) !important;
   transform: none;
-  inset: calc(2 * var(--sidebar-padding) + var(--xxl)) auto auto
-    var(--sidebar-padding);
+  inset: calc(2 * var(--sidebar-padding) + var(--xxl)) auto auto var(--sidebar-padding);
   margin-inline: 0 !important;
 
   #urlbar {
