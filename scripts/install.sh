@@ -33,4 +33,8 @@ if [ ! -e "$userSettings" ] || (! grep 'browser.urlbar.maxRichResults' "$userSet
 	echo 'user_pref("browser.urlbar.maxRichResults", true);' >>"$userSettings"
 fi
 
+if [ ! -e "$userSettings" ] || (! grep 'browser.tabs.loadBookmarksInTabs' "$userSettings"); then
+	echo 'user_pref("browser.tabs.loadBookmarksInTabs", true);' >>"$userSettings"
+fi
+
 echo "userChrome.css installed!"

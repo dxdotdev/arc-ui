@@ -1,0 +1,14 @@
+#window-modal-dialog {
+  position: absolute;
+  transform: translate(50%, -50%);
+  inset: 50% 50% auto auto;
+
+  #commonDialogWindow {
+    background-color: var(--base-100) !important;
+  }
+
+  .dialogBox {
+    border: 3px solid var(--neutral) !important;
+    border-radius: var(--lg) !important;
+  }
+}

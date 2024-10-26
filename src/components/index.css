@@ -4,6 +4,7 @@
 @import url("./from-navigator/screenshot-panel.css");
 @import url("./url-indicator.css");
 @import url("./sidebar.css");
+@import url("./close-dialog.css");
 
 /* small buttons on sidebar (navigator) */
 #navigator-toolbox .toolbarbutton-1 {

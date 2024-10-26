@@ -31,10 +31,6 @@
   }
 }
 
-#identity-icon-label {
-  margin: 0 !important;
-}
-
 #reader-mode-button-icon {
   margin-top: -1px !important;
 }
@@ -62,6 +58,19 @@
     }
   }
 
+  #urlbar-search-mode-indicator {
+    margin: auto 0;
+  }
+
+  #identity-box {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+
+  .urlbar-go-button {
+    display: none !important;
+  }
+
   #identity-permission-box {
     width: auto !important;
     padding: 0 var(--sm) !important;
@@ -79,12 +88,6 @@
   &:has(#identity-box.localResource) {
     #urlbar-input {
       text-overflow: ellipsis;
-    }
-  }
-
-  &:has(#identity-box.chromeUI) {
-    #identity-icon-label {
-      display: none;
     }
   }
 }

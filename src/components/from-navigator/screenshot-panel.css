@@ -2,7 +2,7 @@ screenshots-buttons {
   position: fixed !important;
   top: var(--lg) !important;
   left: calc(100vw + var(--sidebar-correction) * (var(--sidebar-width) + var(--content-padding) / 2)) !important;
-  width: calc(2 * 7.5rem + 4px);
+  width: calc(2 * 7 * var(--lg) + 4px);
   padding: 0 !important;
   overflow: hidden;
   background-color: var(--base-200) !important;
@@ -18,15 +18,25 @@ screenshots-buttons {
 
 #visible-page,
 #full-page {
-  width: 7.5rem;
-  height: 6rem;
+  width: calc(7 * var(--lg));
+  height: calc(6 * var(--lg));
   padding-bottom: 0 !important;
   color: var(--base-content) !important;
   background-color: var(--base-200) !important;
   border-radius: 0 !important;
+  outline: none !important;
   transition: background-color var(--transition);
 
   &:hover {
     background-color: var(--base-100) !important;
   }
+}
+
+.dialogStack.tab-dialog-box.tab-prompt-dialog .dialogTemplate.dialogOverlay .dialogBox {
+  position: absolute;
+  inset: 50% 50% auto auto;
+  border: 3px solid var(--neutral) !important;
+  border-radius: var(--lg) !important;
+  box-shadow: var(--shadow) !important;
+  transform: translate(50%, -50%);
 }

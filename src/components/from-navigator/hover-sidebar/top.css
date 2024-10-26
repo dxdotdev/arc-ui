@@ -23,6 +23,7 @@
   image {
     width: 0.95rem !important;
     height: 0.95rem !important;
+    margin-top: calc(-1.6 * var(--sm)) !important;
     background-color: var(--neutral) !important;
     background-image: none !important;
     transition: background-color var(--transition);

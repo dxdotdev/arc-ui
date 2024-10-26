@@ -1,7 +1,7 @@
 #statuspanel {
   max-width: 40% !important;
   margin: var(--md) !important;
-  padding: var(--sm) var(--lg) !important;
+  padding: var(--sm) 0 var(--sm) var(--lg) !important;
   background-color: var(--base-100) !important;
   border: 2px solid var(--neutral) !important;
   border-radius: var(--lg) !important;

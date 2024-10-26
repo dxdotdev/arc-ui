@@ -43,12 +43,21 @@
   &::after {
     right: calc(-1 * var(--content-padding));
   }
+}
 
-  &:has(#toolbar-menubar[inactive]):not(:has(:is(#urlbar[breakout-extend], #main-menubar):hover)):hover {
-    --sidebar-correction: 0;
+:root:has(:is(#appMenu-popup[panelopen], #placesContext:hover)) #navigator-toolbox {
+  --sidebar-correction: 0;
 
-    left: calc(var(--content-padding) / 2);
-  }
+  left: calc(var(--content-padding) / 2);
+}
+
+#navigator-toolbox[movingtab],
+#navigator-toolbox:has(#toolbar-menubar[inactive]):not(
+    :has(:is(#urlbar[breakout-extend], screenshots-buttons):hover)
+  ):hover {
+  --sidebar-correction: 0;
+
+  left: calc(var(--content-padding) / 2);
 }
 
 .titlebar-spacer,
