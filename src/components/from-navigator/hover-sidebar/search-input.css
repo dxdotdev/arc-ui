@@ -50,7 +50,7 @@
     padding: 0 var(--md) !important;
     background-color: var(--base-100) !important;
     border: none !important;
-    box-shadow: none;
+    box-shadow: none !important;
     transition: background-color var(--transition) !important;
 
     &:hover {

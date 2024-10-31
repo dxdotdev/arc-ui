@@ -10,6 +10,23 @@
   inherits: true;
 }
 
+/* small buttons on sidebar (navigator) */
+#navigator-toolbox .toolbarbutton-1 {
+  width: 36px;
+  height: 36px;
+  padding: 0 !important;
+
+  .toolbarbutton-icon {
+    border-radius: var(--md) !important;
+    transition: background-color var(--transition);
+  }
+
+  &[open] .toolbarbutton-icon,
+  &:not([disabled]):hover .toolbarbutton-icon {
+    background-color: var(--base-100) !important;
+  }
+}
+
 #navigator-toolbox {
   --sidebar-correction: 1;
   --sidebar-translate: calc(var(--sidebar-width) + var(--content-padding) / 2);
@@ -20,10 +37,12 @@
   height: calc(100vh - var(--content-padding)) !important;
   padding: var(--sidebar-padding) !important;
   background-color: var(--base-200) !important;
+  background-image: none !important;
   border: 2px solid var(--neutral) !important;
   border-radius: var(--lg) !important;
   box-shadow: var(--shadow);
   transform: translateY(-50%);
+  backdrop-filter: blur(1rem);
   transition: left 150ms ease-in-out, --sidebar-correction 150ms ease-in-out !important;
   inset: 50vh auto auto calc(-1 * var(--sidebar-width));
 
@@ -45,12 +64,20 @@
   }
 }
 
-:root:has(:is(#appMenu-popup[panelopen], #placesContext:hover)) #navigator-toolbox {
-  --sidebar-correction: 0;
-
-  left: calc(var(--content-padding) / 2);
-}
-
+:root:has(
+    :is(
+        :is(#placesContext, #tabContextMenu):hover,
+        :is(#fxa-toolbar-menu-button, #star-button-box)[open],
+        :is(
+            #appMenu-popup,
+            #downloadsPanel,
+            #notification-popup,
+            #unified-extensions-panel,
+            #full-page-translations-panel
+          )[panelopen]
+      )
+  )
+  #navigator-toolbox,
 #navigator-toolbox[movingtab],
 #navigator-toolbox:has(#toolbar-menubar[inactive]):not(
     :has(:is(#urlbar[breakout-extend], screenshots-buttons):hover)
@@ -68,3 +95,19 @@
 spacer {
   display: none;
 }
+
+#appMenu-popup,
+#unified-extensions-panel,
+#customizationui-widget-panel,
+#full-page-translations-panel,
+#editBookmarkPanel {
+  margin: calc(var(--sm) / 3) auto !important;
+}
+
+/* #notification-popup { */
+
+/* z-index: 1000; */
+
+/* transform: translate(100%, -100%) !important; */
+
+/* } */

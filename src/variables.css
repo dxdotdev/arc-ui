@@ -8,7 +8,7 @@
   --xxl: 2.618rem;
 
   /* colors (reference daisy ui) */
-  --primary: ;
+  --primary: var(--toolbarbutton-icon-fill) !important;
   --primary-content: ;
   --secondary: ;
   --secondary-content: ;
@@ -34,12 +34,8 @@
   --transition: 100ms ease-in-out;
 
   /* firefox adjusts */
-
-  /* --color-accent-primary: red !important; */
-
-  /* --toolbarbutton-icon-fill: red !important; */
-
-  /* --in-content-primary-button-background: red !important; */
-
-  /* --toolbar-field-color: red !important; */
+  --color-accent-primary: var(--primary) !important;
+  --toolbar-field-color: var(--base-content) !important;
+  --toolbarbutton-icon-fill-attention: var(--primary) !important;
+  --button-primary-bgcolor: var(--primary) !important;
 }

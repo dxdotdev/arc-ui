@@ -15,10 +15,11 @@
 
 #urlbar {
   padding: var(--sm) !important;
-  background-color: var(--base-100) !important;
+  background-color: var(--base-200) !important;
   border: 2px solid var(--neutral) !important;
   border-radius: var(--lg) !important;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(1rem);
   transition: none !important;
 }
 
@@ -70,7 +71,7 @@
 #urlbar-results {
   display: flex !important;
   flex-direction: column;
-  gap: var(--sm);
+  gap: calc(var(--sm) / 3) !important;
 }
 
 .urlbarView-body-inner,

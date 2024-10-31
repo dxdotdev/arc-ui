@@ -5,19 +5,3 @@
 @import url("./url-indicator.css");
 @import url("./sidebar.css");
 @import url("./close-dialog.css");
-
-/* small buttons on sidebar (navigator) */
-#navigator-toolbox .toolbarbutton-1 {
-  width: 36px;
-  height: 36px;
-  padding: 0 !important;
-
-  .toolbarbutton-icon {
-    border-radius: var(--md) !important;
-    transition: background-color var(--transition);
-  }
-
-  &:not([disabled]):hover .toolbarbutton-icon {
-    background-color: var(--base-100) !important;
-  }
-}
