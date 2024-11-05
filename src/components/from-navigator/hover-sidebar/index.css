@@ -73,7 +73,9 @@
             #downloadsPanel,
             #notification-popup,
             #unified-extensions-panel,
-            #full-page-translations-panel
+            #full-page-translations-panel,
+            #notification-popup,
+            #appMenu-notification-popup
           )[panelopen]
       )
   )
@@ -104,10 +106,22 @@ spacer {
   margin: calc(var(--sm) / 3) auto !important;
 }
 
-/* #notification-popup { */
+:root:has(#notification-popup[panelopen]) #unified-extensions-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--base-200) !important;
+  transform: translate(2px, 3px) !important;
+}
 
-/* z-index: 1000; */
+#notification-popup {
+  width: calc(var(--sidebar-width) - var(--sidebar-padding));
+  padding-top: var(--sm);
+  transform: translateX(0) !important;
+}
 
-/* transform: translate(100%, -100%) !important; */
-
-/* } */
+#appMenu-notification-popup {
+  width: calc(var(--sidebar-width) - var(--sidebar-padding) + 4px);
+  transform: translate(var(--sidebar-padding), var(--sm)) !important;
+}

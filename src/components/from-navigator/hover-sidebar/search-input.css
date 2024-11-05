@@ -45,6 +45,10 @@
   inset: calc(2 * var(--sidebar-padding) + var(--xxl)) auto auto var(--sidebar-padding);
   margin-inline: 0 !important;
 
+  #urlbar-background {
+    box-shadow: none !important;
+  }
+
   #urlbar {
     height: var(--urlbar-container-height) !important;
     padding: 0 var(--md) !important;

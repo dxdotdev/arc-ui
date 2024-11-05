@@ -22,12 +22,12 @@
 #browser {
   padding: var(--content-padding);
   background-color: var(--base-100) !important;
+  backdrop-filter: blur(1rem);
 }
 
-#appcontent {
+#tabbrowser-tabpanels {
   overflow: hidden;
   border: var(--content-border);
   border-radius: var(--content-border-radius);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(1rem);
 }
