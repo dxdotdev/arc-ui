@@ -18,6 +18,8 @@
 
 Arc UI is a custom [userChrome.css] packed with styles to make your browser look and feel like [Arc Browser].
 
+<img src="./.github/assets/ui.png">
+
 <br />
 
 ## Install
