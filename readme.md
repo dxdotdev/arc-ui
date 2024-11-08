@@ -20,11 +20,6 @@ Arc UI is a custom [userChrome.css] packed with styles to make your browser look
 
 <br />
 
-<div align="right">
-  <img src="./.github/assets/ui.png" />
-  Theme: <a href="https://github.com/catppuccin/firefox">Catppuccin Macchiato - Blue</a>
-</div>
-
 ## Install
 
 To install the userChrome.css, close Firefox and follow the steps below:
