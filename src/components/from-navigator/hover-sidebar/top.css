@@ -18,7 +18,7 @@
 }
 
 .titlebar-button {
-  padding: calc(var(--sm) / 1.6) eemportant;
+  padding-inline: calc(var(--sm) / 2) !important;
 
   image {
     width: 0.95rem !important;
