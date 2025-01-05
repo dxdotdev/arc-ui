@@ -2,6 +2,15 @@
 [Arc Browser]: https://arc.net/
 [install the userChrome.css manually]: https://www.reddit.com/r/FirefoxCSS/wiki/index/tutorials/#wiki_create_the_folder_and_its_files
 [latest release]: https://github.com/dxdotdev/arc-ui/releases/latest
+[Zen Browser]: https://zen-browser.app/
+
+## WARNING:
+
+As the [Zen Browser] has gained a lot of attention lately and is proving to be a promising project, I'm leaving this project aside and focusing on open-source contributions to improve Zen Browser.
+
+If you want an alternative to this project give it a try: [Zen Browser].
+
+<br />
 
 <div align="center">
   <img width="128" src="./.github/assets/arc-ui-default.svg" />
